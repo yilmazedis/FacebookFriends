@@ -42,6 +42,9 @@
 		01702EF529E704BA000F96B9 /* FriendListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EF429E704BA000F96B9 /* FriendListDetailViewController.swift */; };
 		01702EF729E77E75000F96B9 /* UITextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EF629E77E75000F96B9 /* UITextField+Ext.swift */; };
 		01702EF929E77F1E000F96B9 /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EF829E77F1E000F96B9 /* UIButton+Ext.swift */; };
+		01702EFD29E7A081000F96B9 /* SigninConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EFC29E7A081000F96B9 /* SigninConfigurator.swift */; };
+		01702F0229E7A408000F96B9 /* SignupConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702F0129E7A408000F96B9 /* SignupConfigurator.swift */; };
+		01702F0829E7AA7C000F96B9 /* FriendListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702F0729E7AA7C000F96B9 /* FriendListConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +104,9 @@
 		01702EF429E704BA000F96B9 /* FriendListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListDetailViewController.swift; sourceTree = "<group>"; };
 		01702EF629E77E75000F96B9 /* UITextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Ext.swift"; sourceTree = "<group>"; };
 		01702EF829E77F1E000F96B9 /* UIButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
+		01702EFC29E7A081000F96B9 /* SigninConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninConfigurator.swift; sourceTree = "<group>"; };
+		01702F0129E7A408000F96B9 /* SignupConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupConfigurator.swift; sourceTree = "<group>"; };
+		01702F0729E7AA7C000F96B9 /* FriendListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +215,7 @@
 				01702ECD29E6FB4F000F96B9 /* FriendListPresenter.swift */,
 				01702ECF29E6FB57000F96B9 /* FriendListInteractor.swift */,
 				01702ED129E6FB5E000F96B9 /* FriendListRouter.swift */,
+				01702F0729E7AA7C000F96B9 /* FriendListConfigurator.swift */,
 			);
 			path = FriendList;
 			sourceTree = "<group>";
@@ -220,6 +227,7 @@
 				01702EC529E6FB09000F96B9 /* SignupPresenter.swift */,
 				01702EC729E6FB0F000F96B9 /* SignupInteractor.swift */,
 				01702EC929E6FB23000F96B9 /* SignupRouter.swift */,
+				01702F0129E7A408000F96B9 /* SignupConfigurator.swift */,
 			);
 			path = Signup;
 			sourceTree = "<group>";
@@ -231,6 +239,7 @@
 				01702EBB29E6FA64000F96B9 /* SigninPresenter.swift */,
 				01702EBD29E6FA77000F96B9 /* SigninInteractor.swift */,
 				01702EBF29E6FA81000F96B9 /* SigninRouter.swift */,
+				01702EFC29E7A081000F96B9 /* SigninConfigurator.swift */,
 			);
 			path = Signin;
 			sourceTree = "<group>";
@@ -429,9 +438,11 @@
 				01702EC829E6FB0F000F96B9 /* SignupInteractor.swift in Sources */,
 				01702EBA29E6FA56000F96B9 /* SigninViewController.swift in Sources */,
 				01702EE229E7016D000F96B9 /* ManagerFail.swift in Sources */,
+				01702F0829E7AA7C000F96B9 /* FriendListConfigurator.swift in Sources */,
 				01702EE729E701D8000F96B9 /* UIViewController+Ext.swift in Sources */,
 				01702EE929E70207000F96B9 /* String+Ext.swift in Sources */,
 				01702EC329E6FAAF000F96B9 /* SignupViewController.swift in Sources */,
+				01702F0229E7A408000F96B9 /* SignupConfigurator.swift in Sources */,
 				01702ED229E6FB5E000F96B9 /* FriendListRouter.swift in Sources */,
 				01702ED829E6FFAE000F96B9 /* FriendListDataSource.swift in Sources */,
 				01702ECE29E6FB4F000F96B9 /* FriendListPresenter.swift in Sources */,
@@ -444,6 +455,7 @@
 				01702EEE29E70257000F96B9 /* NetworkManager.swift in Sources */,
 				01702EEB29E70218000F96B9 /* UIImageView+Ext.swift in Sources */,
 				01702EC029E6FA81000F96B9 /* SigninRouter.swift in Sources */,
+				01702EFD29E7A081000F96B9 /* SigninConfigurator.swift in Sources */,
 				01702EE529E701AD000F96B9 /* UIImage+Preload.swift in Sources */,
 				01702ECC29E6FB42000F96B9 /* FriendListViewController.swift in Sources */,
 				01702EDF29E70095000F96B9 /* Constants.swift in Sources */,

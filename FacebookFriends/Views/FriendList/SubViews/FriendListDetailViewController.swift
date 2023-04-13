@@ -63,7 +63,7 @@ final class FriendListDetailViewController: UIViewController {
         configureNavigationBar(largeTitleColor: .label,
                                backgoundColor: .systemBlue,
                                tintColor: .label,
-                               title: person.name.first,
+                               title: person.name?.first ?? "",
                                preferredLargeTitle: false)
         
         setImageAutolayout()

@@ -56,9 +56,9 @@ final class FriendListCell: UICollectionViewCell {
 
     func configure(model: Person) {
         
-        friendName.text = model.name.first
+        friendName.text = model.name?.first ?? ""
                 
-        guard let url = URL(string: model.picture.thumbnail) else { return }
+        guard let url = URL(string: model.picture?.thumbnail ?? "") else { return }
         
         imageView.networkImage(with: imageDownloader, url: url)
     }

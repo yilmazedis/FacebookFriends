@@ -16,7 +16,7 @@ protocol SigninViewProtocol: AnyObject {
     func updateData(data: [Person])
 }
 
-final class SigninViewConroller: UIViewController {
+final class SigninViewController: UIViewController {
     
     private lazy var topStackView: UIStackView = {
         let stackView = UIStackView()
@@ -180,7 +180,7 @@ final class SigninViewConroller: UIViewController {
     }
 }
 
-extension SigninViewConroller: SigninViewProtocol {
+extension SigninViewController: SigninViewProtocol {
     func updateData(data: [Person]) {
 
     }

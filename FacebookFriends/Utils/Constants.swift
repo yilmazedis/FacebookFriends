@@ -6,18 +6,9 @@
 //
 
 struct K {
-    struct TMDB {
-        static let url = "https://api.themoviedb.org/3/"
-        static let movieCategory = "discover/movie"
-        static let listCategory = "genre/movie/list"
-        static let token = "3bb3e67969473d0cb4a48a0dd61af747"
-        static let posterUrl = "https://image.tmdb.org/t/p/w200/"
-        static let title = "Movies"
-        static let videoURL = "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
-    }
-    
     struct Person {
         static let cell = "FriendListCell"
+        static let url = "https://randomuser.me/api/"
     }
     
     struct Cache {

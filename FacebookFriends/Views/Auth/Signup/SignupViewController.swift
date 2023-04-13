@@ -97,7 +97,7 @@ final class SignupViewController: UIViewController {
     
     // MARK: - SignupInteractorProtocol
     var interactor: SignupInteractorProtocol?
-    weak var router: SignupRouterProtocol?
+    var router: SignupRouterProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()

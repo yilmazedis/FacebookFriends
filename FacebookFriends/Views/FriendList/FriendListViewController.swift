@@ -22,7 +22,8 @@ final class FriendListViewConroller: UIViewController {
     weak var router: FriendListRouterProtocol?
     
     // MARK: - Private
-    private let movieDataSource = FriendListDataSource()
+    private let dataSource = FriendListDataSource()
+    private let mutex = Mutex()
 
     // MARK: - Private Lazy
     private lazy var collectionView: UICollectionView = {
@@ -35,10 +36,10 @@ final class FriendListViewConroller: UIViewController {
         super.viewDidLoad()
         interactor?.fetchData(page: 1)
         
-        collectionView.delegate = movieDataSource
-        collectionView.dataSource = movieDataSource
-        collectionView.collectionViewLayout = movieDataSource
-        movieDataSource.delegate = self
+        collectionView.delegate = dataSource
+        collectionView.dataSource = dataSource
+        collectionView.collectionViewLayout = dataSource
+        dataSource.delegate = self
         
         setCollectionViewLayout()
     }
@@ -55,7 +56,24 @@ final class FriendListViewConroller: UIViewController {
 
 extension FriendListViewConroller: FriendListViewProtocol {
     func updateData(data: [Person]) {
+        DispatchQueue.main.async { [weak self] in
+            
+            // If fetch calls so twice or trice while scrolling
+            // We must secure critical section
+            self?.mutex.sync {
+                let newItems = data
+                // Calculate the index paths of the new items based on the current count
+                guard let startIndex = self?.collectionView.numberOfItems(inSection: 0) else { return }
+                let endIndex = startIndex + newItems.count - 1
+                let indexPaths = (startIndex...endIndex).map { IndexPath(item: $0, section: 0) }
 
+                self?.dataSource.person.append(contentsOf: data)
+                // Insert the new items to the collection view
+                self?.collectionView.performBatchUpdates({
+                    self?.collectionView.insertItems(at: indexPaths)
+                }, completion: nil)
+            }
+        }
     }
 }
 

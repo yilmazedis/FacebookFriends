@@ -39,6 +39,6 @@ struct FastLogger {
         
         let icon = "\u{1F6A8}"
         let log = Logger.init(subsystem: Bundle.main.bundleIdentifier!, category: fileName)
-        log.log(level: .error, "\(icon) \(message)")
+        log.log(level: .error, "\(icon) \(message) \(error.localizedDescription)")
     }
 }
