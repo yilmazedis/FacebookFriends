@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIImageView {
-    func networkImage(with downloader: ImageDownloader, url: URL) {
+    func networkImage(with downloader: ImageDownloader = ImageDownloader(), url: URL) {
         downloader.downloadPhoto(with: url, completion: { (image, isCached) in
             if isCached {
                 FastLogger.log(what: K.DebugMessage.fromCache, about: .info)

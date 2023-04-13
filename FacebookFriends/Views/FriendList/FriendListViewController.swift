@@ -19,7 +19,7 @@ protocol FriendListViewProtocol: AnyObject {
 final class FriendListViewConroller: UIViewController {
     // MARK: - InteractorProtocol
     var interactor: FriendListInteractorProtocol?
-    weak var router: FriendListRouterProtocol?
+    var router: FriendListRouterProtocol?
     
     // MARK: - Private
     private let dataSource = FriendListDataSource()
@@ -42,6 +42,8 @@ final class FriendListViewConroller: UIViewController {
         dataSource.delegate = self
         
         setCollectionViewLayout()
+        
+        configureNavigationBar(largeTitleColor: .white, backgoundColor: .systemBlue, tintColor: .white, title: "Friend List", preferredLargeTitle: true)
     }
     
     private func setCollectionViewLayout() {
@@ -82,7 +84,7 @@ extension FriendListViewConroller: FriendListDataSourceDelegate {
         interactor?.fetchData(page: page)
     }
     
-    func selectedMovie(with person: Person) {
+    func selectPerson(with person: Person) {
         router?.showMovieDetailViewController(person: person)
     }
 }

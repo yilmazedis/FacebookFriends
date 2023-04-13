@@ -21,3 +21,19 @@ extension String {
         return components.url
     }
 }
+
+extension String {
+    func toReadableDateString() -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        guard let date = dateFormatter.date(from: self) else {
+            return nil
+        }
+        
+        let readableDateFormatter = DateFormatter()
+        readableDateFormatter.dateStyle = .medium
+        readableDateFormatter.timeStyle = .medium
+        return readableDateFormatter.string(from: date)
+    }
+}

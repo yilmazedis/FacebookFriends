@@ -10,7 +10,7 @@ import UIKit
 final class FriendListCell: UICollectionViewCell {
 
     private lazy var imageView: UIImageView = {
-       let view = UIImageView()
+        let view = UIImageView()
         return view
     }()
     
@@ -31,6 +31,14 @@ final class FriendListCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setLayout()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        // Set the corner radius and clip to bounds here
+        imageView.layer.cornerRadius = contentView.frame.size.width / 2
+        imageView.clipsToBounds = true
     }
     
     private func setLayout() {

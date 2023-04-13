@@ -11,7 +11,7 @@ import UIKit
 
 protocol FriendListDataSourceDelegate: AnyObject {
     func fetchData(page: Int)
-    func selectedMovie(with movie: Person)
+    func selectPerson(with movie: Person)
 }
 
 final class FriendListDataSource: UICollectionViewFlowLayout {
@@ -80,6 +80,6 @@ extension FriendListDataSource: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.selectedMovie(with: person[indexPath.item])
+        delegate?.selectPerson(with: person[indexPath.item])
     }
 }

@@ -45,6 +45,11 @@
 		01702EFD29E7A081000F96B9 /* SigninConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EFC29E7A081000F96B9 /* SigninConfigurator.swift */; };
 		01702F0229E7A408000F96B9 /* SignupConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702F0129E7A408000F96B9 /* SignupConfigurator.swift */; };
 		01702F0829E7AA7C000F96B9 /* FriendListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702F0729E7AA7C000F96B9 /* FriendListConfigurator.swift */; };
+		01702F0A29E8459B000F96B9 /* Optional+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702F0929E8459B000F96B9 /* Optional+Ext.swift */; };
+		01702F0C29E8489C000F96B9 /* OperatorOverloads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702F0B29E8489C000F96B9 /* OperatorOverloads.swift */; };
+		01702F0E29E849BB000F96B9 /* PersonCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702F0D29E849BB000F96B9 /* PersonCardView.swift */; };
+		01702F1029E84AD5000F96B9 /* MKMapView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702F0F29E84AD5000F96B9 /* MKMapView+Ext.swift */; };
+		01702F1429E8AB95000F96B9 /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702F1329E8AB95000F96B9 /* UILabel+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +112,11 @@
 		01702EFC29E7A081000F96B9 /* SigninConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninConfigurator.swift; sourceTree = "<group>"; };
 		01702F0129E7A408000F96B9 /* SignupConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupConfigurator.swift; sourceTree = "<group>"; };
 		01702F0729E7AA7C000F96B9 /* FriendListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListConfigurator.swift; sourceTree = "<group>"; };
+		01702F0929E8459B000F96B9 /* Optional+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Ext.swift"; sourceTree = "<group>"; };
+		01702F0B29E8489C000F96B9 /* OperatorOverloads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorOverloads.swift; sourceTree = "<group>"; };
+		01702F0D29E849BB000F96B9 /* PersonCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCardView.swift; sourceTree = "<group>"; };
+		01702F0F29E84AD5000F96B9 /* MKMapView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Ext.swift"; sourceTree = "<group>"; };
+		01702F1329E8AB95000F96B9 /* UILabel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +269,7 @@
 				01702EE029E70162000F96B9 /* Enums */,
 				01702EDC29E70080000F96B9 /* FastLogger.swift */,
 				01702EDE29E70095000F96B9 /* Constants.swift */,
+				01702F0B29E8489C000F96B9 /* OperatorOverloads.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -280,6 +291,9 @@
 				01702EEA29E70218000F96B9 /* UIImageView+Ext.swift */,
 				01702EF629E77E75000F96B9 /* UITextField+Ext.swift */,
 				01702EF829E77F1E000F96B9 /* UIButton+Ext.swift */,
+				01702F0929E8459B000F96B9 /* Optional+Ext.swift */,
+				01702F0F29E84AD5000F96B9 /* MKMapView+Ext.swift */,
+				01702F1329E8AB95000F96B9 /* UILabel+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -297,6 +311,7 @@
 		01702EF329E7038F000F96B9 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				01702F0D29E849BB000F96B9 /* PersonCardView.swift */,
 				01702EF429E704BA000F96B9 /* FriendListDetailViewController.swift */,
 			);
 			path = SubViews;
@@ -451,8 +466,11 @@
 				01702EBC29E6FA64000F96B9 /* SigninPresenter.swift in Sources */,
 				01702ED029E6FB57000F96B9 /* FriendListInteractor.swift in Sources */,
 				01702EF529E704BA000F96B9 /* FriendListDetailViewController.swift in Sources */,
+				01702F0E29E849BB000F96B9 /* PersonCardView.swift in Sources */,
 				01702EF029E702BF000F96B9 /* ImageDownloader.swift in Sources */,
 				01702EEE29E70257000F96B9 /* NetworkManager.swift in Sources */,
+				01702F1429E8AB95000F96B9 /* UILabel+Ext.swift in Sources */,
+				01702F1029E84AD5000F96B9 /* MKMapView+Ext.swift in Sources */,
 				01702EEB29E70218000F96B9 /* UIImageView+Ext.swift in Sources */,
 				01702EC029E6FA81000F96B9 /* SigninRouter.swift in Sources */,
 				01702EFD29E7A081000F96B9 /* SigninConfigurator.swift in Sources */,
@@ -461,7 +479,9 @@
 				01702EDF29E70095000F96B9 /* Constants.swift in Sources */,
 				01702EC629E6FB09000F96B9 /* SignupPresenter.swift in Sources */,
 				01702E8829E5EF9B000F96B9 /* SceneDelegate.swift in Sources */,
+				01702F0A29E8459B000F96B9 /* Optional+Ext.swift in Sources */,
 				01702EF929E77F1E000F96B9 /* UIButton+Ext.swift in Sources */,
+				01702F0C29E8489C000F96B9 /* OperatorOverloads.swift in Sources */,
 				01702EF229E702DE000F96B9 /* Mutex.swift in Sources */,
 				01702ED529E6FECF000F96B9 /* Person.swift in Sources */,
 				01702ECA29E6FB23000F96B9 /* SignupRouter.swift in Sources */,
