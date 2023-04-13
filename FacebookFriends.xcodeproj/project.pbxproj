@@ -9,12 +9,42 @@
 /* Begin PBXBuildFile section */
 		01702E8629E5EF9B000F96B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702E8529E5EF9B000F96B9 /* AppDelegate.swift */; };
 		01702E8829E5EF9B000F96B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702E8729E5EF9B000F96B9 /* SceneDelegate.swift */; };
-		01702E8A29E5EF9B000F96B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702E8929E5EF9B000F96B9 /* ViewController.swift */; };
 		01702E8F29E5EF9D000F96B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01702E8E29E5EF9D000F96B9 /* Assets.xcassets */; };
 		01702E9229E5EF9D000F96B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01702E9029E5EF9D000F96B9 /* LaunchScreen.storyboard */; };
 		01702E9D29E5EF9D000F96B9 /* FacebookFriendsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702E9C29E5EF9D000F96B9 /* FacebookFriendsTests.swift */; };
 		01702EA729E5EF9D000F96B9 /* FacebookFriendsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EA629E5EF9D000F96B9 /* FacebookFriendsUITests.swift */; };
 		01702EA929E5EF9D000F96B9 /* FacebookFriendsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EA829E5EF9D000F96B9 /* FacebookFriendsUITestsLaunchTests.swift */; };
+		01702EBA29E6FA56000F96B9 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EB929E6FA56000F96B9 /* SigninViewController.swift */; };
+		01702EBC29E6FA64000F96B9 /* SigninPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EBB29E6FA64000F96B9 /* SigninPresenter.swift */; };
+		01702EBE29E6FA77000F96B9 /* SigninInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EBD29E6FA77000F96B9 /* SigninInteractor.swift */; };
+		01702EC029E6FA81000F96B9 /* SigninRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EBF29E6FA81000F96B9 /* SigninRouter.swift */; };
+		01702EC329E6FAAF000F96B9 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EC229E6FAAF000F96B9 /* SignupViewController.swift */; };
+		01702EC629E6FB09000F96B9 /* SignupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EC529E6FB09000F96B9 /* SignupPresenter.swift */; };
+		01702EC829E6FB0F000F96B9 /* SignupInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EC729E6FB0F000F96B9 /* SignupInteractor.swift */; };
+		01702ECA29E6FB23000F96B9 /* SignupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EC929E6FB23000F96B9 /* SignupRouter.swift */; };
+		01702ECC29E6FB42000F96B9 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702ECB29E6FB42000F96B9 /* FriendListViewController.swift */; };
+		01702ECE29E6FB4F000F96B9 /* FriendListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702ECD29E6FB4F000F96B9 /* FriendListPresenter.swift */; };
+		01702ED029E6FB57000F96B9 /* FriendListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702ECF29E6FB57000F96B9 /* FriendListInteractor.swift */; };
+		01702ED229E6FB5E000F96B9 /* FriendListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702ED129E6FB5E000F96B9 /* FriendListRouter.swift */; };
+		01702ED529E6FECF000F96B9 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702ED429E6FECF000F96B9 /* Person.swift */; };
+		01702ED829E6FFAE000F96B9 /* FriendListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702ED729E6FFAE000F96B9 /* FriendListDataSource.swift */; };
+		01702EDA29E6FFC6000F96B9 /* FriendListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702ED929E6FFC6000F96B9 /* FriendListCell.swift */; };
+		01702EDD29E70080000F96B9 /* FastLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EDC29E70080000F96B9 /* FastLogger.swift */; };
+		01702EDF29E70095000F96B9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EDE29E70095000F96B9 /* Constants.swift */; };
+		01702EE229E7016D000F96B9 /* ManagerFail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EE129E7016D000F96B9 /* ManagerFail.swift */; };
+		01702EE529E701AD000F96B9 /* UIImage+Preload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EE429E701AD000F96B9 /* UIImage+Preload.swift */; };
+		01702EE729E701D8000F96B9 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EE629E701D8000F96B9 /* UIViewController+Ext.swift */; };
+		01702EE929E70207000F96B9 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EE829E70207000F96B9 /* String+Ext.swift */; };
+		01702EEB29E70218000F96B9 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EEA29E70218000F96B9 /* UIImageView+Ext.swift */; };
+		01702EEE29E70257000F96B9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EED29E70257000F96B9 /* NetworkManager.swift */; };
+		01702EF029E702BF000F96B9 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EEF29E702BF000F96B9 /* ImageDownloader.swift */; };
+		01702EF229E702DE000F96B9 /* Mutex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EF129E702DE000F96B9 /* Mutex.swift */; };
+		01702EF529E704BA000F96B9 /* FriendListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EF429E704BA000F96B9 /* FriendListDetailViewController.swift */; };
+		01702EF729E77E75000F96B9 /* UITextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EF629E77E75000F96B9 /* UITextField+Ext.swift */; };
+		01702EF929E77F1E000F96B9 /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EF829E77F1E000F96B9 /* UIButton+Ext.swift */; };
+		01702EFD29E7A081000F96B9 /* SigninConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EFC29E7A081000F96B9 /* SigninConfigurator.swift */; };
+		01702F0229E7A408000F96B9 /* SignupConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702F0129E7A408000F96B9 /* SignupConfigurator.swift */; };
+		01702F0829E7AA7C000F96B9 /* FriendListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702F0729E7AA7C000F96B9 /* FriendListConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +68,6 @@
 		01702E8229E5EF9B000F96B9 /* FacebookFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01702E8529E5EF9B000F96B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01702E8729E5EF9B000F96B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		01702E8929E5EF9B000F96B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		01702E8E29E5EF9D000F96B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01702E9129E5EF9D000F96B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01702E9329E5EF9D000F96B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +76,37 @@
 		01702EA229E5EF9D000F96B9 /* FacebookFriendsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FacebookFriendsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01702EA629E5EF9D000F96B9 /* FacebookFriendsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookFriendsUITests.swift; sourceTree = "<group>"; };
 		01702EA829E5EF9D000F96B9 /* FacebookFriendsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookFriendsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		01702EB929E6FA56000F96B9 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
+		01702EBB29E6FA64000F96B9 /* SigninPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninPresenter.swift; sourceTree = "<group>"; };
+		01702EBD29E6FA77000F96B9 /* SigninInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninInteractor.swift; sourceTree = "<group>"; };
+		01702EBF29E6FA81000F96B9 /* SigninRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRouter.swift; sourceTree = "<group>"; };
+		01702EC229E6FAAF000F96B9 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		01702EC529E6FB09000F96B9 /* SignupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPresenter.swift; sourceTree = "<group>"; };
+		01702EC729E6FB0F000F96B9 /* SignupInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupInteractor.swift; sourceTree = "<group>"; };
+		01702EC929E6FB23000F96B9 /* SignupRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRouter.swift; sourceTree = "<group>"; };
+		01702ECB29E6FB42000F96B9 /* FriendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
+		01702ECD29E6FB4F000F96B9 /* FriendListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListPresenter.swift; sourceTree = "<group>"; };
+		01702ECF29E6FB57000F96B9 /* FriendListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListInteractor.swift; sourceTree = "<group>"; };
+		01702ED129E6FB5E000F96B9 /* FriendListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListRouter.swift; sourceTree = "<group>"; };
+		01702ED429E6FECF000F96B9 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		01702ED729E6FFAE000F96B9 /* FriendListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListDataSource.swift; sourceTree = "<group>"; };
+		01702ED929E6FFC6000F96B9 /* FriendListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListCell.swift; sourceTree = "<group>"; };
+		01702EDC29E70080000F96B9 /* FastLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastLogger.swift; sourceTree = "<group>"; };
+		01702EDE29E70095000F96B9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		01702EE129E7016D000F96B9 /* ManagerFail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerFail.swift; sourceTree = "<group>"; };
+		01702EE429E701AD000F96B9 /* UIImage+Preload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Preload.swift"; sourceTree = "<group>"; };
+		01702EE629E701D8000F96B9 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		01702EE829E70207000F96B9 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		01702EEA29E70218000F96B9 /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
+		01702EED29E70257000F96B9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		01702EEF29E702BF000F96B9 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		01702EF129E702DE000F96B9 /* Mutex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mutex.swift; sourceTree = "<group>"; };
+		01702EF429E704BA000F96B9 /* FriendListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListDetailViewController.swift; sourceTree = "<group>"; };
+		01702EF629E77E75000F96B9 /* UITextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Ext.swift"; sourceTree = "<group>"; };
+		01702EF829E77F1E000F96B9 /* UIButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
+		01702EFC29E7A081000F96B9 /* SigninConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninConfigurator.swift; sourceTree = "<group>"; };
+		01702F0129E7A408000F96B9 /* SignupConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupConfigurator.swift; sourceTree = "<group>"; };
+		01702F0729E7AA7C000F96B9 /* FriendListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +157,12 @@
 		01702E8429E5EF9B000F96B9 /* FacebookFriends */ = {
 			isa = PBXGroup;
 			children = (
+				01702EEC29E70238000F96B9 /* Managers */,
+				01702EDB29E70067000F96B9 /* Utils */,
+				01702ED329E6FC90000F96B9 /* Models */,
+				01702EB529E6F9BC000F96B9 /* Views */,
 				01702E8529E5EF9B000F96B9 /* AppDelegate.swift */,
 				01702E8729E5EF9B000F96B9 /* SceneDelegate.swift */,
-				01702E8929E5EF9B000F96B9 /* ViewController.swift */,
 				01702E8E29E5EF9D000F96B9 /* Assets.xcassets */,
 				01702E9029E5EF9D000F96B9 /* LaunchScreen.storyboard */,
 				01702E9329E5EF9D000F96B9 /* Info.plist */,
@@ -122,6 +185,121 @@
 				01702EA829E5EF9D000F96B9 /* FacebookFriendsUITestsLaunchTests.swift */,
 			);
 			path = FacebookFriendsUITests;
+			sourceTree = "<group>";
+		};
+		01702EB529E6F9BC000F96B9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				01702EB729E6F9CB000F96B9 /* FriendList */,
+				01702EB629E6F9C4000F96B9 /* Auth */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		01702EB629E6F9C4000F96B9 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				01702EC429E6FAE1000F96B9 /* Signin */,
+				01702EC129E6FA98000F96B9 /* Signup */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		01702EB729E6F9CB000F96B9 /* FriendList */ = {
+			isa = PBXGroup;
+			children = (
+				01702EF329E7038F000F96B9 /* SubViews */,
+				01702ED929E6FFC6000F96B9 /* FriendListCell.swift */,
+				01702ED729E6FFAE000F96B9 /* FriendListDataSource.swift */,
+				01702ECB29E6FB42000F96B9 /* FriendListViewController.swift */,
+				01702ECD29E6FB4F000F96B9 /* FriendListPresenter.swift */,
+				01702ECF29E6FB57000F96B9 /* FriendListInteractor.swift */,
+				01702ED129E6FB5E000F96B9 /* FriendListRouter.swift */,
+				01702F0729E7AA7C000F96B9 /* FriendListConfigurator.swift */,
+			);
+			path = FriendList;
+			sourceTree = "<group>";
+		};
+		01702EC129E6FA98000F96B9 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				01702EC229E6FAAF000F96B9 /* SignupViewController.swift */,
+				01702EC529E6FB09000F96B9 /* SignupPresenter.swift */,
+				01702EC729E6FB0F000F96B9 /* SignupInteractor.swift */,
+				01702EC929E6FB23000F96B9 /* SignupRouter.swift */,
+				01702F0129E7A408000F96B9 /* SignupConfigurator.swift */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		01702EC429E6FAE1000F96B9 /* Signin */ = {
+			isa = PBXGroup;
+			children = (
+				01702EB929E6FA56000F96B9 /* SigninViewController.swift */,
+				01702EBB29E6FA64000F96B9 /* SigninPresenter.swift */,
+				01702EBD29E6FA77000F96B9 /* SigninInteractor.swift */,
+				01702EBF29E6FA81000F96B9 /* SigninRouter.swift */,
+				01702EFC29E7A081000F96B9 /* SigninConfigurator.swift */,
+			);
+			path = Signin;
+			sourceTree = "<group>";
+		};
+		01702ED329E6FC90000F96B9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				01702ED429E6FECF000F96B9 /* Person.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		01702EDB29E70067000F96B9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				01702EE329E7017C000F96B9 /* Extensions */,
+				01702EE029E70162000F96B9 /* Enums */,
+				01702EDC29E70080000F96B9 /* FastLogger.swift */,
+				01702EDE29E70095000F96B9 /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		01702EE029E70162000F96B9 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				01702EE129E7016D000F96B9 /* ManagerFail.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		01702EE329E7017C000F96B9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				01702EE429E701AD000F96B9 /* UIImage+Preload.swift */,
+				01702EE629E701D8000F96B9 /* UIViewController+Ext.swift */,
+				01702EE829E70207000F96B9 /* String+Ext.swift */,
+				01702EEA29E70218000F96B9 /* UIImageView+Ext.swift */,
+				01702EF629E77E75000F96B9 /* UITextField+Ext.swift */,
+				01702EF829E77F1E000F96B9 /* UIButton+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		01702EEC29E70238000F96B9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				01702EED29E70257000F96B9 /* NetworkManager.swift */,
+				01702EEF29E702BF000F96B9 /* ImageDownloader.swift */,
+				01702EF129E702DE000F96B9 /* Mutex.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		01702EF329E7038F000F96B9 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				01702EF429E704BA000F96B9 /* FriendListDetailViewController.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,9 +432,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01702E8A29E5EF9B000F96B9 /* ViewController.swift in Sources */,
+				01702EBE29E6FA77000F96B9 /* SigninInteractor.swift in Sources */,
+				01702EF729E77E75000F96B9 /* UITextField+Ext.swift in Sources */,
+				01702EDA29E6FFC6000F96B9 /* FriendListCell.swift in Sources */,
+				01702EC829E6FB0F000F96B9 /* SignupInteractor.swift in Sources */,
+				01702EBA29E6FA56000F96B9 /* SigninViewController.swift in Sources */,
+				01702EE229E7016D000F96B9 /* ManagerFail.swift in Sources */,
+				01702F0829E7AA7C000F96B9 /* FriendListConfigurator.swift in Sources */,
+				01702EE729E701D8000F96B9 /* UIViewController+Ext.swift in Sources */,
+				01702EE929E70207000F96B9 /* String+Ext.swift in Sources */,
+				01702EC329E6FAAF000F96B9 /* SignupViewController.swift in Sources */,
+				01702F0229E7A408000F96B9 /* SignupConfigurator.swift in Sources */,
+				01702ED229E6FB5E000F96B9 /* FriendListRouter.swift in Sources */,
+				01702ED829E6FFAE000F96B9 /* FriendListDataSource.swift in Sources */,
+				01702ECE29E6FB4F000F96B9 /* FriendListPresenter.swift in Sources */,
 				01702E8629E5EF9B000F96B9 /* AppDelegate.swift in Sources */,
+				01702EDD29E70080000F96B9 /* FastLogger.swift in Sources */,
+				01702EBC29E6FA64000F96B9 /* SigninPresenter.swift in Sources */,
+				01702ED029E6FB57000F96B9 /* FriendListInteractor.swift in Sources */,
+				01702EF529E704BA000F96B9 /* FriendListDetailViewController.swift in Sources */,
+				01702EF029E702BF000F96B9 /* ImageDownloader.swift in Sources */,
+				01702EEE29E70257000F96B9 /* NetworkManager.swift in Sources */,
+				01702EEB29E70218000F96B9 /* UIImageView+Ext.swift in Sources */,
+				01702EC029E6FA81000F96B9 /* SigninRouter.swift in Sources */,
+				01702EFD29E7A081000F96B9 /* SigninConfigurator.swift in Sources */,
+				01702EE529E701AD000F96B9 /* UIImage+Preload.swift in Sources */,
+				01702ECC29E6FB42000F96B9 /* FriendListViewController.swift in Sources */,
+				01702EDF29E70095000F96B9 /* Constants.swift in Sources */,
+				01702EC629E6FB09000F96B9 /* SignupPresenter.swift in Sources */,
 				01702E8829E5EF9B000F96B9 /* SceneDelegate.swift in Sources */,
+				01702EF929E77F1E000F96B9 /* UIButton+Ext.swift in Sources */,
+				01702EF229E702DE000F96B9 /* Mutex.swift in Sources */,
+				01702ED529E6FECF000F96B9 /* Person.swift in Sources */,
+				01702ECA29E6FB23000F96B9 /* SignupRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
