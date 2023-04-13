@@ -21,22 +21,22 @@ final class SigninViewController: UIViewController {
     private lazy var topStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.spacing = 12
+        stackView.spacing = 25
         stackView.alignment = .center
         return stackView
     }()
     
     private lazy var appIconImageView: UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(named: "appLogo")
+        view.image = UIImage(named: "facebookLogo")
         return view
     }()
     
     private lazy var appNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "login.Facebook Friends"
+        label.text = "Facebook Friends"
         label.textAlignment = .center
-        label.font = UIFont.appMainBold(fontSize: 24)
+        label.font = UIFont.appMainBold(fontSize: 35)
         label.textColor = UIColor.purple()
         return label
     }()
@@ -50,13 +50,13 @@ final class SigninViewController: UIViewController {
     
     private lazy var emailTextField: UITextField = {
         let textField = UITextField()
-        textField.setDefault(iconName: "envelope", placeHolder: "login.email")
+        textField.setDefault(iconName: "envelope", placeHolder: "Email")
         return textField
     }()
     
     private lazy var passwordTextField: UITextField = {
         let textField = UITextField()
-        textField.setDefault(iconName: "lock", placeHolder: "login.password")
+        textField.setDefault(iconName: "lock", placeHolder: "Password")
         textField.isSecureTextEntry = true
         return textField
     }()
@@ -68,14 +68,15 @@ final class SigninViewController: UIViewController {
     
     private lazy var forgotPasswordButton: UIButton = {
         let button = UIButton()
-        button.setDefaultClearButton(buttonName: "login.forgotPasswordButton", fontSize: 16)
+        button.setDefaultClearButton(buttonName: "Forgot Password", fontSize: 16)
         button.addTarget(self, action: #selector(forgotPasswordButtonAction), for: .touchUpInside)
         return button
     }()
     
     private lazy var loginButton: UIButton = {
         let button = UIButton()
-        button.setDefaultAppButton(buttonName: "login.loginButton", fontSize: 20)
+        button.setDefaultAppButton(buttonName: "Sign in", fontSize: 20)
+        button.setTitleColor(UIColor.white, for: .normal)
         button.addTarget(self, action: #selector(loginButtonAction), for: .touchUpInside)
         return button
     }()
@@ -91,7 +92,7 @@ final class SigninViewController: UIViewController {
         let label = UILabel()
         label.textColor = UIColor.purple()
         label.font = UIFont.appMainRegular(fontSize: 15)
-        label.text = "doHaveAnAccount"
+        label.text = "No Account? Then"
         label.backgroundColor = .clear
         label.textAlignment = .center
         return label
@@ -99,7 +100,7 @@ final class SigninViewController: UIViewController {
     
     private lazy var signupButton: UIButton = {
         let button = UIButton()
-        button.setDefaultClearButton(buttonName: "signUp", fontSize: 16)
+        button.setDefaultClearButton(buttonName: "Sign Up", fontSize: 16)
         button.addTarget(self, action: #selector(signupButtonAction), for: .touchUpInside)
         return button
     }()

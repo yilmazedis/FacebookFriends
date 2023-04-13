@@ -33,40 +33,41 @@ final class SignupViewController: UIViewController {
     
     private lazy var emailTextField: UITextField = {
         let textField = UITextField()
-        textField.setDefault(iconName: "envelope", placeHolder: "signup.email")
+        textField.setDefault(iconName: "envelope", placeHolder: "Email")
         return textField
     }()
     
     private lazy var fullNameTextField: UITextField = {
         let textField = UITextField()
-        textField.setDefault(iconName: "person", placeHolder: "signup.fullName")
+        textField.setDefault(iconName: "person", placeHolder: "Full Name")
         return textField
     }()
     
     
     private lazy var userNameTextField: UITextField = {
         let textField = UITextField()
-        textField.setDefault(iconName: "person.fill", placeHolder: "signup.userName")
+        textField.setDefault(iconName: "person.fill", placeHolder: "User Name")
         return textField
     }()
     
     private lazy var passwordTextField: UITextField = {
         let textField = UITextField()
-        textField.setDefault(iconName: "lock", placeHolder: "signup.password")
+        textField.setDefault(iconName: "lock", placeHolder: "Password")
         textField.isSecureTextEntry = true
         return textField
     }()
     
     private lazy var rePasswordTextField: UITextField = {
         let textField = UITextField()
-        textField.setDefault(iconName: "lock.fill", placeHolder: "signup.password")
+        textField.setDefault(iconName: "lock.fill", placeHolder: "Repassword")
         textField.isSecureTextEntry = true
         return textField
     }()
     
     private lazy var signupButton: UIButton = {
         let button = UIButton()
-        button.setDefaultAppButton(buttonName: "signup.signupButton", fontSize: 16)
+        button.setDefaultAppButton(buttonName: "Signup", fontSize: 20)
+        button.setTitleColor(UIColor.white, for: .normal)
         button.addTarget(self, action: #selector(signupButtonAction), for: .touchUpInside)
         return button
     }()
@@ -82,7 +83,7 @@ final class SignupViewController: UIViewController {
         let label = UILabel()
         label.textColor = UIColor.purple()
         label.font = UIFont.appMainRegular(fontSize: 15)
-        label.text = "signup.doHaveAnAccount"
+        label.text = "Have An Account, So"
         label.backgroundColor = .clear
         label.textAlignment = .center
         return label
@@ -90,7 +91,7 @@ final class SignupViewController: UIViewController {
     
     private lazy var loginButton: UIButton = {
         let button = UIButton()
-        button.setDefaultClearButton(buttonName: "signup.loginButton", fontSize: 16)
+        button.setDefaultClearButton(buttonName: "Login", fontSize: 16)
         button.addTarget(self, action: #selector(loginButtonAction), for: .touchUpInside)
         return button
     }()

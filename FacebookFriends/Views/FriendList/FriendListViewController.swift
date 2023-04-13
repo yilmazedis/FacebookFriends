@@ -44,6 +44,9 @@ final class FriendListViewConroller: UIViewController {
         setCollectionViewLayout()
         
         configureNavigationBar(largeTitleColor: .white, backgoundColor: .systemBlue, tintColor: .white, title: "Friend List", preferredLargeTitle: true)
+        
+        let signoutButton = UIBarButtonItem(title: "Signout", style: .plain, target: self, action: #selector(signoutButtonAction))
+        navigationItem.rightBarButtonItem = signoutButton
     }
     
     private func setCollectionViewLayout() {
@@ -53,6 +56,10 @@ final class FriendListViewConroller: UIViewController {
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    }
+    
+    @objc private func signoutButtonAction() {
+        dismiss(animated: true, completion: nil)
     }
 }
 
