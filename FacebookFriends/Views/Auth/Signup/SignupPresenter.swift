@@ -10,13 +10,13 @@ import Foundation
 protocol SignupPresenterProtocol: AnyObject {
     var view: SignupViewProtocol? { get set }
     
-    func dataFetched(data: [Person])
+    func signUp(status isOn: Status)
 }
 
 final class SignupPresenter: SignupPresenterProtocol {
     weak var view: SignupViewProtocol?
 
-    func dataFetched(data: [Person]) {
-        view?.updateData(data: data)
+    func signUp(status isOn: Status) {
+        view?.signUp(status: isOn)
     }
 }

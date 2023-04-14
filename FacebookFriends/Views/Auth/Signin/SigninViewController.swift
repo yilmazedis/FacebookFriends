@@ -165,11 +165,11 @@ final class SigninViewController: UIViewController {
     }
     
     @objc func forgotPasswordButtonAction(_ sender: UIButton) {
-        let email = self.emailTextField.text ?? ""
-        //self.viewModel.userUpdatePassword(email: email)
+        //let email = self.emailTextField.text ?? ""
     }
     
     @objc func loginButtonAction(_ sender: UIButton) {
+        
         let email = self.emailTextField.text ?? ""
         let password = self.passwordTextField.text ?? ""
         

@@ -12,8 +12,6 @@
 		01702E8F29E5EF9D000F96B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01702E8E29E5EF9D000F96B9 /* Assets.xcassets */; };
 		01702E9229E5EF9D000F96B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01702E9029E5EF9D000F96B9 /* LaunchScreen.storyboard */; };
 		01702E9D29E5EF9D000F96B9 /* FacebookFriendsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702E9C29E5EF9D000F96B9 /* FacebookFriendsTests.swift */; };
-		01702EA729E5EF9D000F96B9 /* FacebookFriendsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EA629E5EF9D000F96B9 /* FacebookFriendsUITests.swift */; };
-		01702EA929E5EF9D000F96B9 /* FacebookFriendsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EA829E5EF9D000F96B9 /* FacebookFriendsUITestsLaunchTests.swift */; };
 		01702EBA29E6FA56000F96B9 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EB929E6FA56000F96B9 /* SigninViewController.swift */; };
 		01702EBC29E6FA64000F96B9 /* SigninPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EBB29E6FA64000F96B9 /* SigninPresenter.swift */; };
 		01702EBE29E6FA77000F96B9 /* SigninInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702EBD29E6FA77000F96B9 /* SigninInteractor.swift */; };
@@ -51,20 +49,15 @@
 		01702F1029E84AD5000F96B9 /* MKMapView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702F0F29E84AD5000F96B9 /* MKMapView+Ext.swift */; };
 		01702F1429E8AB95000F96B9 /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702F1329E8AB95000F96B9 /* UILabel+Ext.swift */; };
 		01BD9C2429E8D28F00422591 /* RealmCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD9C2329E8D28F00422591 /* RealmCache.swift */; };
+		01BD9C2629E9A99A00422591 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD9C2529E9A99A00422591 /* AuthManager.swift */; };
+		01BD9C2829E9AA9D00422591 /* UserAuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD9C2729E9AA9D00422591 /* UserAuthError.swift */; };
+		01BD9C2A29E9AD0200422591 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD9C2929E9AD0200422591 /* Status.swift */; };
 		5E05BD569B1D0211FF8D8213 /* Pods_FacebookFriendsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AC5129D17881C6D857276B /* Pods_FacebookFriendsTests.framework */; };
-		8657A4921B16DB504627E436 /* Pods_FacebookFriends_FacebookFriendsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86A71EF7621B858E1C2F3D1 /* Pods_FacebookFriends_FacebookFriendsUITests.framework */; };
 		B6B397BEF839DA752C7DE3FD /* Pods_FacebookFriends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DAD806CD7C7C212306CEE41 /* Pods_FacebookFriends.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		01702E9929E5EF9D000F96B9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 01702E7A29E5EF9A000F96B9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 01702E8129E5EF9A000F96B9;
-			remoteInfo = FacebookFriends;
-		};
-		01702EA329E5EF9D000F96B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 01702E7A29E5EF9A000F96B9 /* Project object */;
 			proxyType = 1;
@@ -82,9 +75,6 @@
 		01702E9329E5EF9D000F96B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01702E9829E5EF9D000F96B9 /* FacebookFriendsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FacebookFriendsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01702E9C29E5EF9D000F96B9 /* FacebookFriendsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookFriendsTests.swift; sourceTree = "<group>"; };
-		01702EA229E5EF9D000F96B9 /* FacebookFriendsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FacebookFriendsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		01702EA629E5EF9D000F96B9 /* FacebookFriendsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookFriendsUITests.swift; sourceTree = "<group>"; };
-		01702EA829E5EF9D000F96B9 /* FacebookFriendsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookFriendsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		01702EB929E6FA56000F96B9 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		01702EBB29E6FA64000F96B9 /* SigninPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninPresenter.swift; sourceTree = "<group>"; };
 		01702EBD29E6FA77000F96B9 /* SigninInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninInteractor.swift; sourceTree = "<group>"; };
@@ -122,6 +112,9 @@
 		01702F0F29E84AD5000F96B9 /* MKMapView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Ext.swift"; sourceTree = "<group>"; };
 		01702F1329E8AB95000F96B9 /* UILabel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
 		01BD9C2329E8D28F00422591 /* RealmCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCache.swift; sourceTree = "<group>"; };
+		01BD9C2529E9A99A00422591 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		01BD9C2729E9AA9D00422591 /* UserAuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthError.swift; sourceTree = "<group>"; };
+		01BD9C2929E9AD0200422591 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		45F3C3E88BE095304F002792 /* Pods-FacebookFriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacebookFriends.debug.xcconfig"; path = "Target Support Files/Pods-FacebookFriends/Pods-FacebookFriends.debug.xcconfig"; sourceTree = "<group>"; };
 		50FEBDB130E2B3F3728E0E04 /* Pods-FacebookFriendsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacebookFriendsTests.release.xcconfig"; path = "Target Support Files/Pods-FacebookFriendsTests/Pods-FacebookFriendsTests.release.xcconfig"; sourceTree = "<group>"; };
 		6DAD806CD7C7C212306CEE41 /* Pods_FacebookFriends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FacebookFriends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,14 +143,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		01702E9F29E5EF9D000F96B9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8657A4921B16DB504627E436 /* Pods_FacebookFriends_FacebookFriendsUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -166,7 +151,6 @@
 			children = (
 				01702E8429E5EF9B000F96B9 /* FacebookFriends */,
 				01702E9B29E5EF9D000F96B9 /* FacebookFriendsTests */,
-				01702EA529E5EF9D000F96B9 /* FacebookFriendsUITests */,
 				01702E8329E5EF9B000F96B9 /* Products */,
 				0D97910B0C5D0622E0C9CD32 /* Pods */,
 				307BEC51BF46686F6BC860C2 /* Frameworks */,
@@ -178,7 +162,6 @@
 			children = (
 				01702E8229E5EF9B000F96B9 /* FacebookFriends.app */,
 				01702E9829E5EF9D000F96B9 /* FacebookFriendsTests.xctest */,
-				01702EA229E5EF9D000F96B9 /* FacebookFriendsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -205,15 +188,6 @@
 				01702E9C29E5EF9D000F96B9 /* FacebookFriendsTests.swift */,
 			);
 			path = FacebookFriendsTests;
-			sourceTree = "<group>";
-		};
-		01702EA529E5EF9D000F96B9 /* FacebookFriendsUITests */ = {
-			isa = PBXGroup;
-			children = (
-				01702EA629E5EF9D000F96B9 /* FacebookFriendsUITests.swift */,
-				01702EA829E5EF9D000F96B9 /* FacebookFriendsUITestsLaunchTests.swift */,
-			);
-			path = FacebookFriendsUITests;
 			sourceTree = "<group>";
 		};
 		01702EB529E6F9BC000F96B9 /* Views */ = {
@@ -297,6 +271,8 @@
 			isa = PBXGroup;
 			children = (
 				01702EE129E7016D000F96B9 /* ManagerFail.swift */,
+				01BD9C2729E9AA9D00422591 /* UserAuthError.swift */,
+				01BD9C2929E9AD0200422591 /* Status.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -324,6 +300,7 @@
 				01702EEF29E702BF000F96B9 /* ImageDownloader.swift */,
 				01BD9C2329E8D28F00422591 /* RealmCache.swift */,
 				01702EF129E702DE000F96B9 /* Mutex.swift */,
+				01BD9C2529E9A99A00422591 /* AuthManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -401,26 +378,6 @@
 			productReference = 01702E9829E5EF9D000F96B9 /* FacebookFriendsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		01702EA129E5EF9D000F96B9 /* FacebookFriendsUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 01702EB229E5EF9D000F96B9 /* Build configuration list for PBXNativeTarget "FacebookFriendsUITests" */;
-			buildPhases = (
-				15C69F96F9685043AE418CE1 /* [CP] Check Pods Manifest.lock */,
-				01702E9E29E5EF9D000F96B9 /* Sources */,
-				01702E9F29E5EF9D000F96B9 /* Frameworks */,
-				01702EA029E5EF9D000F96B9 /* Resources */,
-				E8B5BC8B5040531EE52D54BA /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				01702EA429E5EF9D000F96B9 /* PBXTargetDependency */,
-			);
-			name = FacebookFriendsUITests;
-			productName = FacebookFriendsUITests;
-			productReference = 01702EA229E5EF9D000F96B9 /* FacebookFriendsUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -435,10 +392,6 @@
 						CreatedOnToolsVersion = 13.3.1;
 					};
 					01702E9729E5EF9D000F96B9 = {
-						CreatedOnToolsVersion = 13.3.1;
-						TestTargetID = 01702E8129E5EF9A000F96B9;
-					};
-					01702EA129E5EF9D000F96B9 = {
 						CreatedOnToolsVersion = 13.3.1;
 						TestTargetID = 01702E8129E5EF9A000F96B9;
 					};
@@ -459,7 +412,6 @@
 			targets = (
 				01702E8129E5EF9A000F96B9 /* FacebookFriends */,
 				01702E9729E5EF9D000F96B9 /* FacebookFriendsTests */,
-				01702EA129E5EF9D000F96B9 /* FacebookFriendsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -475,13 +427,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		01702E9629E5EF9D000F96B9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		01702EA029E5EF9D000F96B9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -507,28 +452,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-FacebookFriendsTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		15C69F96F9685043AE418CE1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FacebookFriends-FacebookFriendsUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -574,23 +497,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FacebookFriends/Pods-FacebookFriends-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E8B5BC8B5040531EE52D54BA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FacebookFriends-FacebookFriendsUITests/Pods-FacebookFriends-FacebookFriendsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FacebookFriends-FacebookFriendsUITests/Pods-FacebookFriends-FacebookFriendsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FacebookFriends-FacebookFriendsUITests/Pods-FacebookFriends-FacebookFriendsUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -607,6 +513,7 @@
 				01702F0829E7AA7C000F96B9 /* FriendListConfigurator.swift in Sources */,
 				01702EE729E701D8000F96B9 /* UIViewController+Ext.swift in Sources */,
 				01702EE929E70207000F96B9 /* String+Ext.swift in Sources */,
+				01BD9C2629E9A99A00422591 /* AuthManager.swift in Sources */,
 				01702EC329E6FAAF000F96B9 /* SignupViewController.swift in Sources */,
 				01702F0229E7A408000F96B9 /* SignupConfigurator.swift in Sources */,
 				01702ED229E6FB5E000F96B9 /* FriendListRouter.swift in Sources */,
@@ -617,8 +524,10 @@
 				01702EBC29E6FA64000F96B9 /* SigninPresenter.swift in Sources */,
 				01702ED029E6FB57000F96B9 /* FriendListInteractor.swift in Sources */,
 				01702EF529E704BA000F96B9 /* FriendListDetailViewController.swift in Sources */,
+				01BD9C2829E9AA9D00422591 /* UserAuthError.swift in Sources */,
 				01702F0E29E849BB000F96B9 /* PersonCardView.swift in Sources */,
 				01702EF029E702BF000F96B9 /* ImageDownloader.swift in Sources */,
+				01BD9C2A29E9AD0200422591 /* Status.swift in Sources */,
 				01702EEE29E70257000F96B9 /* NetworkManager.swift in Sources */,
 				01702F1429E8AB95000F96B9 /* UILabel+Ext.swift in Sources */,
 				01702F1029E84AD5000F96B9 /* MKMapView+Ext.swift in Sources */,
@@ -648,15 +557,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		01702E9E29E5EF9D000F96B9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				01702EA929E5EF9D000F96B9 /* FacebookFriendsUITestsLaunchTests.swift in Sources */,
-				01702EA729E5EF9D000F96B9 /* FacebookFriendsUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -664,11 +564,6 @@
 			isa = PBXTargetDependency;
 			target = 01702E8129E5EF9A000F96B9 /* FacebookFriends */;
 			targetProxy = 01702E9929E5EF9D000F96B9 /* PBXContainerItemProxy */;
-		};
-		01702EA429E5EF9D000F96B9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 01702E8129E5EF9A000F96B9 /* FacebookFriends */;
-			targetProxy = 01702EA329E5EF9D000F96B9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -892,42 +787,6 @@
 			};
 			name = Release;
 		};
-		01702EB329E5EF9D000F96B9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E96B67E5F618C6D7A088C6A5 /* Pods-FacebookFriends-FacebookFriendsUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yilmaz.FacebookFriendsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = FacebookFriends;
-			};
-			name = Debug;
-		};
-		01702EB429E5EF9D000F96B9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F7389B63171180D332D0392B /* Pods-FacebookFriends-FacebookFriendsUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yilmaz.FacebookFriendsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = FacebookFriends;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -954,15 +813,6 @@
 			buildConfigurations = (
 				01702EB029E5EF9D000F96B9 /* Debug */,
 				01702EB129E5EF9D000F96B9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		01702EB229E5EF9D000F96B9 /* Build configuration list for PBXNativeTarget "FacebookFriendsUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				01702EB329E5EF9D000F96B9 /* Debug */,
-				01702EB429E5EF9D000F96B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

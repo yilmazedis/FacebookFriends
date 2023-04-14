@@ -12,7 +12,9 @@ final class SignupConfigurator {
     func configure() -> SignupViewController {
         let router = SignupRouter()
         
-        let interactor = SignupInteractor()
+        let authManager = UserAuthManager()
+        
+        let interactor = SignupInteractor(authManager: authManager)
         let presenter = SignupPresenter()
         let viewController = SignupViewController()
         viewController.router = router

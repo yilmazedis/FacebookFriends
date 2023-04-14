@@ -13,7 +13,7 @@ protocol SignupViewProtocol: AnyObject {
     var interactor: SignupInteractorProtocol? { get set }
     var router: SignupRouterProtocol? { get set }
     
-    func updateData(data: [Person])
+    func signUp(status isOn: Status)
 }
 
 final class SignupViewController: UIViewController {
@@ -148,10 +148,11 @@ final class SignupViewController: UIViewController {
     @objc private func signupButtonAction(_ sender: UIButton) {
         let email = self.emailTextField.text ?? ""
         let fullName = self.emailTextField.text ?? ""
-        let userName = self.emailTextField.text ?? ""
+        let username = self.emailTextField.text ?? ""
         let password = self.emailTextField.text ?? ""
         let rePassword = self.emailTextField.text ?? ""
         
+        interactor?.signup(email: email, password: password, username: username, fullName: fullName)
     }
     
     @objc private func loginButtonAction(_ sender: UIButton) {
@@ -160,7 +161,11 @@ final class SignupViewController: UIViewController {
 }
 
 extension SignupViewController: SignupViewProtocol {
-    func updateData(data: [Person]) {
-
+    func signUp(status isOn: Status) {
+        if isOn == .success {
+            router?.routeFriendList()
+        } else {
+            
+        }
     }
 }
