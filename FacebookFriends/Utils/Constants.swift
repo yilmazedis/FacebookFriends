@@ -13,6 +13,7 @@ struct K {
     
     struct Cache {
         static let name = "PersonCache"
+        static let expiryDate = 3600
     }
     
     struct ErrorMessage {
@@ -33,6 +34,7 @@ struct K {
     
     struct DebugMessage {
         static let fromCache = "Got From Cache"
+        static let expiryDate = "Time Expired & Gonna Get From URL"
         static let fromURL = "Got From URL"
     }
 }

@@ -24,6 +24,7 @@ final class FriendListViewConroller: UIViewController {
     // MARK: - Private
     private let dataSource = FriendListDataSource()
     private let mutex = Mutex()
+    private let refreshControl = UIRefreshControl()
 
     // MARK: - Private Lazy
     private lazy var collectionView: UICollectionView = {
@@ -34,8 +35,6 @@ final class FriendListViewConroller: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        interactor?.fetchData(page: 1)
-        
         collectionView.delegate = dataSource
         collectionView.dataSource = dataSource
         collectionView.collectionViewLayout = dataSource
@@ -47,6 +46,12 @@ final class FriendListViewConroller: UIViewController {
         
         let signoutButton = UIBarButtonItem(title: "Signout", style: .plain, target: self, action: #selector(signoutButtonAction))
         navigationItem.rightBarButtonItem = signoutButton
+        
+        collectionView.refreshControl = refreshControl
+        collectionView.alwaysBounceVertical = true
+        refreshControl.addTarget(self, action: #selector(refreshCollectionView(_:)), for: .valueChanged)
+        
+        interactor?.fetchData()
     }
     
     private func setCollectionViewLayout() {
@@ -56,6 +61,18 @@ final class FriendListViewConroller: UIViewController {
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    }
+    
+    @objc func refreshCollectionView(_ sender: UIRefreshControl) {
+        // Perform data refresh
+        CacheManager.shared.clearCache()
+        dataSource.person.removeAll()
+        collectionView.reloadData()
+        interactor?.resetCurrentPage()
+        interactor?.fetchData()
+        
+        // End refreshing
+        sender.endRefreshing()
     }
     
     @objc private func signoutButtonAction() {
@@ -87,8 +104,8 @@ extension FriendListViewConroller: FriendListViewProtocol {
 }
 
 extension FriendListViewConroller: FriendListDataSourceDelegate {
-    func fetchData(page: Int) {
-        interactor?.fetchData(page: page)
+    func fetchData() {
+        interactor?.fetchData()
     }
     
     func selectPerson(with person: Person) {

@@ -5,12 +5,10 @@
 //  Created by yilmaz on 12.04.2023.
 //
 
-import Foundation
-
 import UIKit
 
 protocol FriendListDataSourceDelegate: AnyObject {
-    func fetchData(page: Int)
+    func fetchData()
     func selectPerson(with movie: Person)
 }
 
@@ -19,11 +17,10 @@ final class FriendListDataSource: UICollectionViewFlowLayout {
     weak var delegate: FriendListDataSourceDelegate?
     
     var person: [Person] = []
-    var viewControllers = [UIViewController]()
     
     let itemsPerRow = 3
     let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 0, right: 10.0)
-    private var currentPage = 1
+    private var isLoading: Bool = false
     
     override init() {
         super.init()
@@ -31,22 +28,21 @@ final class FriendListDataSource: UICollectionViewFlowLayout {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError(K.ErrorMessage.requiredInit)
     }
     
-    // You can use others, up to you
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        // Check if the user has scrolled to the bottom of the collection view
-        let contentHeight = scrollView.contentSize.height
-        let yOffset = scrollView.contentOffset.y
-        let height = scrollView.frame.height
-        if yOffset + height > contentHeight - 400 {
-            // Increment the page number and make another network call to fetch the data
-            currentPage += 1
-            delegate?.fetchData(page: currentPage)
-            FastLogger.log(what: K.InfoMessage.paginationLength, about: .info)
-        }
-    }
+//    // You can use others, up to you, Optional approach, up to you
+//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+//        // Check if the user has scrolled to the bottom of the collection view
+//        let contentHeight = scrollView.contentSize.height
+//        let yOffset = scrollView.contentOffset.y
+//        let height = scrollView.frame.height
+//        if yOffset + height > contentHeight - 400 {
+//            // Increment the page number and make another network call to fetch the data
+//            delegate?.fetchData()
+//            //FastLogger.log(what: K.InfoMessage.paginationLength, about: .info)
+//        }
+//    }
 }
 
 extension FriendListDataSource: UICollectionViewDelegateFlowLayout {
@@ -81,5 +77,11 @@ extension FriendListDataSource: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         delegate?.selectPerson(with: person[indexPath.item])
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+         if indexPath.item == person.count - 15 { //it's your last cell
+             delegate?.fetchData()
+         }
     }
 }

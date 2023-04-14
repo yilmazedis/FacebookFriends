@@ -50,6 +50,7 @@
 		01702F0E29E849BB000F96B9 /* PersonCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702F0D29E849BB000F96B9 /* PersonCardView.swift */; };
 		01702F1029E84AD5000F96B9 /* MKMapView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702F0F29E84AD5000F96B9 /* MKMapView+Ext.swift */; };
 		01702F1429E8AB95000F96B9 /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702F1329E8AB95000F96B9 /* UILabel+Ext.swift */; };
+		01BD9C2429E8D28F00422591 /* RealmCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD9C2329E8D28F00422591 /* RealmCache.swift */; };
 		5E05BD569B1D0211FF8D8213 /* Pods_FacebookFriendsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AC5129D17881C6D857276B /* Pods_FacebookFriendsTests.framework */; };
 		8657A4921B16DB504627E436 /* Pods_FacebookFriends_FacebookFriendsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86A71EF7621B858E1C2F3D1 /* Pods_FacebookFriends_FacebookFriendsUITests.framework */; };
 		B6B397BEF839DA752C7DE3FD /* Pods_FacebookFriends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DAD806CD7C7C212306CEE41 /* Pods_FacebookFriends.framework */; };
@@ -120,6 +121,7 @@
 		01702F0D29E849BB000F96B9 /* PersonCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCardView.swift; sourceTree = "<group>"; };
 		01702F0F29E84AD5000F96B9 /* MKMapView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Ext.swift"; sourceTree = "<group>"; };
 		01702F1329E8AB95000F96B9 /* UILabel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
+		01BD9C2329E8D28F00422591 /* RealmCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCache.swift; sourceTree = "<group>"; };
 		45F3C3E88BE095304F002792 /* Pods-FacebookFriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacebookFriends.debug.xcconfig"; path = "Target Support Files/Pods-FacebookFriends/Pods-FacebookFriends.debug.xcconfig"; sourceTree = "<group>"; };
 		50FEBDB130E2B3F3728E0E04 /* Pods-FacebookFriendsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacebookFriendsTests.release.xcconfig"; path = "Target Support Files/Pods-FacebookFriendsTests/Pods-FacebookFriendsTests.release.xcconfig"; sourceTree = "<group>"; };
 		6DAD806CD7C7C212306CEE41 /* Pods_FacebookFriends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FacebookFriends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -320,6 +322,7 @@
 			children = (
 				01702EED29E70257000F96B9 /* NetworkManager.swift */,
 				01702EEF29E702BF000F96B9 /* ImageDownloader.swift */,
+				01BD9C2329E8D28F00422591 /* RealmCache.swift */,
 				01702EF129E702DE000F96B9 /* Mutex.swift */,
 			);
 			path = Managers;
@@ -344,7 +347,6 @@
 				B4317166965662B83A9C0981 /* Pods-FacebookFriendsTests.debug.xcconfig */,
 				50FEBDB130E2B3F3728E0E04 /* Pods-FacebookFriendsTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -623,6 +625,7 @@
 				01702EEB29E70218000F96B9 /* UIImageView+Ext.swift in Sources */,
 				01702EC029E6FA81000F96B9 /* SigninRouter.swift in Sources */,
 				01702EFD29E7A081000F96B9 /* SigninConfigurator.swift in Sources */,
+				01BD9C2429E8D28F00422591 /* RealmCache.swift in Sources */,
 				01702EE529E701AD000F96B9 /* UIImage+Preload.swift in Sources */,
 				01702ECC29E6FB42000F96B9 /* FriendListViewController.swift in Sources */,
 				01702EDF29E70095000F96B9 /* Constants.swift in Sources */,
