@@ -29,7 +29,10 @@ Endless Scroll Down with pagination.
 - pullToRefresh
 - OperatorOverload
 - Toast Message
+- Extension
+- Custom Views
 - Prevent Third Party Lib as much as possible.
+- & other required things
 
 |   Overview Schema              |    Hight Level System Design            |
 |:-------------------------:|:-------------------------:|
