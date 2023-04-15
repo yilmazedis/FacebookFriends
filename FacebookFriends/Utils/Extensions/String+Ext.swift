@@ -25,8 +25,8 @@ extension String {
 extension String {
     func toReadableDateString() -> String? {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.locale = .current
         guard let date = dateFormatter.date(from: self) else {
             return nil
         }

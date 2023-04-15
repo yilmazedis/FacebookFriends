@@ -19,43 +19,15 @@ extension UITextField {
     }
     
     func setDefault(iconName: String, placeHolder: String) {
-        let attribute = [ NSAttributedString.Key.foregroundColor: UIColor.purple().withAlphaComponent(0.6) ]
+        let attribute = [ NSAttributedString.Key.foregroundColor: UIColor.purple.withAlphaComponent(0.6) ]
         let attributeStr = NSAttributedString(string: placeHolder, attributes: attribute)
         
-        let icon = (UIImage(systemName: iconName)!.withTintColor(UIColor.purple(), renderingMode: .alwaysOriginal))
+        let icon = (UIImage(systemName: iconName)!.withTintColor(.purple, renderingMode: .alwaysOriginal))
         
         self.setIcon(icon)
         self.attributedPlaceholder = attributeStr
         self.backgroundColor = UIColor(white: 1, alpha: 0.4)
-        self.textColor = UIColor.purple()
+        self.textColor = .purple
         self.layer.cornerRadius = 15
-    }
-}
-
-extension UIColor {
-    static func purple()-> UIColor {
-        return UIColor(named: "purple") ?? .purple
-    }
-    
-    static func background()-> UIColor {
-        return UIColor(named: "background") ?? .lightGray
-    }
-    
-    static func text()-> UIColor {
-        return UIColor(named: "text") ?? .black
-    }
-    
-    static func blue()-> UIColor {
-        return UIColor(named: "facebookDefault") ?? .blue
-    }
-}
-
-extension UIFont {
-    static func appMainRegular(fontSize: CGFloat) -> UIFont {
-        return UIFont.systemFont(ofSize: fontSize)
-    }
-    
-    static func appMainBold(fontSize: CGFloat) -> UIFont {
-        return UIFont.boldSystemFont(ofSize: fontSize)
     }
 }

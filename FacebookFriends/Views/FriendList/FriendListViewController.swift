@@ -42,7 +42,7 @@ final class FriendListViewConroller: UIViewController {
         
         setCollectionViewLayout()
         
-        configureNavigationBar(largeTitleColor: .white, backgoundColor: .systemBlue, tintColor: .white, title: "Friend List", preferredLargeTitle: true)
+        configureNavigationBar(largeTitleColor: .white, backgoundColor: .systemBlue, tintColor: .white, title: "Friend List", preferredLargeTitle: false)
         
         let signoutButton = UIBarButtonItem(title: "Signout", style: .plain, target: self, action: #selector(signoutButtonAction))
         navigationItem.rightBarButtonItem = signoutButton

@@ -88,7 +88,7 @@ final class SignupViewController: UIViewController {
     
     private lazy var loginLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.purple()
+        label.textColor = .purple
         label.font = UIFont.appMainRegular(fontSize: 15)
         label.text = "Have An Account, So"
         label.backgroundColor = .clear
@@ -109,7 +109,7 @@ final class SignupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.background()
+        view.backgroundColor = .lightGray
         applyConstraints()
     }
     
