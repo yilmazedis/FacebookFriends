@@ -9,9 +9,8 @@ import Foundation
 
 final class NetworkManager {
     static let shared = NetworkManager()
-    
-    func fetch<T: Decodable>(with url: URL?, expiryDate: Date, completion: @escaping (Result<T, Error>) -> Void) {
         
+    func fetch<T: Decodable>(with url: URL?, expiryDate: Date, completion: @escaping (Result<T, Error>) -> Void) {
         guard let url = url else {
             FastLogger.log(what: K.ErrorMessage.url, about: .error)
             return

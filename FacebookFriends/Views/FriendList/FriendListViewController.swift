@@ -50,6 +50,7 @@ final class FriendListViewConroller: UIViewController {
         collectionView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(refreshCollectionView(_:)), for: .valueChanged)
         
+        showActivityIndicator()
         interactor?.fetchData()
     }
     
@@ -81,8 +82,8 @@ final class FriendListViewConroller: UIViewController {
 
 extension FriendListViewConroller: FriendListViewProtocol {
     func updateData(data: [Person]) {
+        hideActivityIndicator()
         DispatchQueue.main.async { [weak self] in
-            
             // If fetch calls so twice or trice while scrolling
             // We must secure critical section
             self?.mutex.sync {
@@ -104,10 +105,12 @@ extension FriendListViewConroller: FriendListViewProtocol {
 
 extension FriendListViewConroller: FriendListDataSourceDelegate {
     func fetchData() {
+        showActivityIndicator()
         interactor?.fetchData()
     }
     
     func selectPerson(with person: Person) {
+        hideActivityIndicator()
         router?.showMovieDetailViewController(person: person)
     }
 }

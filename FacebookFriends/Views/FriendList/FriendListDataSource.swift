@@ -31,7 +31,8 @@ final class FriendListDataSource: UICollectionViewFlowLayout {
         fatalError(K.ErrorMessage.requiredInit)
     }
     
-//    // You can use others, up to you, Optional approach, up to you
+        /// Optional approach, up to you
+
 //    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
 //        // Check if the user has scrolled to the bottom of the collection view
 //        let contentHeight = scrollView.contentSize.height
@@ -80,7 +81,7 @@ extension FriendListDataSource: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-         if indexPath.item == person.count - 15 { //it's your last cell
+         if indexPath.item == person.count - 20 { //it's your last cell
              delegate?.fetchData()
          }
     }
