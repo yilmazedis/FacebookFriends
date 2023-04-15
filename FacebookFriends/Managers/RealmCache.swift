@@ -30,7 +30,7 @@ class CacheManager {
     
     func getCachedData(for url: String) -> Data? {
         var cachedData: CachedData?
-        //var message = ""
+        var message = ""
         
         realmQueue.sync {
             cachedData = self.realm.object(ofType: CachedData.self, forPrimaryKey: url)
@@ -40,13 +40,13 @@ class CacheManager {
                 try! self.realm.write {
                     self.realm.delete(cachedData!)
                 }
-                //message = K.DebugMessage.expiryDate
+                message = K.DebugMessage.expiryDate
                 cachedData = nil
             }
         }
         
-        //message = K.DebugMessage.fromCache
-        //FastLogger.log(what: message, about: .info)
+        message = K.DebugMessage.fromCache
+        FastLogger.log(what: message, about: .info)
         return cachedData?.data
     }
     
@@ -59,7 +59,7 @@ class CacheManager {
             
             try! self.realm.write {
                 self.realm.create(CachedData.self, value: cachedData, update: .modified)
-                //FastLogger.log(what: K.DebugMessage.fromURL, about: .info)
+                FastLogger.log(what: K.DebugMessage.fromURL, about: .info)
             }
         }
     }

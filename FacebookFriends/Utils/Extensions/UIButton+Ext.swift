@@ -10,7 +10,7 @@ import UIKit
 extension UIButton {
     private func setDefaultButton(buttonName: String) {
         self.setTitle(buttonName, for: .normal)
-        self.setTitleColor(UIColor.purple(), for: .normal)
+        self.setTitleColor(.purple, for: .normal)
         self.layer.cornerRadius = 15
     }
     

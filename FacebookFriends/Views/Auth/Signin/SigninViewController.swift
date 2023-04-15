@@ -38,7 +38,7 @@ final class SigninViewController: UIViewController {
         label.text = "Facebook Friends"
         label.textAlignment = .center
         label.font = UIFont.appMainBold(fontSize: 35)
-        label.textColor = UIColor.purple()
+        label.textColor = .purple
         return label
     }()
     
@@ -96,7 +96,7 @@ final class SigninViewController: UIViewController {
     
     private lazy var signupLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.purple()
+        label.textColor = .purple
         label.font = UIFont.appMainRegular(fontSize: 15)
         label.text = "No Account? Then"
         label.backgroundColor = .clear
@@ -117,7 +117,7 @@ final class SigninViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.background()
+        view.backgroundColor = .lightGray
         applyConstraints()
     }
     

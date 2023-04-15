@@ -49,9 +49,7 @@ final class NetworkManager {
                 return
             }
             
-            //FastLogger.log(what: K.InfoMessage.api, about: .info)
-            
-            print("\( url.description) From URL")
+            FastLogger.log(what: K.InfoMessage.api, about: .info)
             CacheManager.shared.cacheData(data, for: url.absoluteString, expiryDate: expiryDate)
 
             do {
