@@ -8,26 +8,24 @@
 import Foundation
 
 final class NetworkManager {
-    
     static let shared = NetworkManager()
-//    private let cache = ManagerCache.cache
-    
-    func fetch<T: Decodable>(with url: URL?, completion: @escaping (Result<T, Error>) -> Void) {
         
+    func fetch<T: Decodable>(with url: URL?, expiryDate: Date, completion: @escaping (Result<T, Error>) -> Void) {
         guard let url = url else {
             FastLogger.log(what: K.ErrorMessage.url, about: .error)
             return
         }
         
-//        if let data = ManagerCache.imageData(for: url) {
-//            do {
-//                let result = try JSONDecoder().decode(T.self, from: data)
-//                completion(.success(result))
-//            } catch {
-//                completion(.failure(ManagerFail.decode))
-//            }
-//            return
-//        }
+        if let data = CacheManager.shared.getCachedData(for: url.absoluteString) {
+            do {
+                print("\( url.absoluteString) From Cache")
+                let result = try JSONDecoder().decode(T.self, from: data)
+                completion(.success(result))
+            } catch {
+                completion(.failure(ManagerFail.decode))
+            }
+            return
+        }
         
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, response, error in
             
@@ -51,9 +49,10 @@ final class NetworkManager {
                 return
             }
             
-            FastLogger.log(what: K.InfoMessage.api, about: .info)
+            //FastLogger.log(what: K.InfoMessage.api, about: .info)
             
-//            ManagerCache.storeImageData(data: data, response: httpResponse, for: url)
+            print("\( url.description) From URL")
+            CacheManager.shared.cacheData(data, for: url.absoluteString, expiryDate: expiryDate)
 
             do {
                 let decoder = JSONDecoder()

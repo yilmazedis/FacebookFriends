@@ -5,13 +5,13 @@
 //  Created by yilmaz on 12.04.2023.
 //
 
-import UIKit
+import MapKit
 
 final class FriendListDetailViewController: UIViewController {
     
     // MARK: - Views
     private lazy var imageView: UIImageView = {
-       let view = UIImageView()
+        let view = UIImageView()
         return view
     }()
     
@@ -26,20 +26,16 @@ final class FriendListDetailViewController: UIViewController {
         return view
     }()
     
-    private lazy var movieOverview: UILabel = {
-        let view = UILabel()
-        view.font = .systemFont(ofSize: 20, weight: .medium)
-        view.textAlignment = .natural
-        view.textColor = .label
-        view.numberOfLines = 0
+    private lazy var personCardView: PersonCardView = {
+        let view = PersonCardView()
+        view.layer.cornerRadius = 12
+        view.layer.borderColor = UIColor.systemBlue.cgColor
+        view.layer.borderWidth = 2
         return view
     }()
     
-    private lazy var movieReleaseDate: UILabel = {
-        let view = UILabel()
-        view.font = .systemFont(ofSize: 20, weight: .regular)
-        view.textAlignment = .left
-        view.textColor = .label
+    private lazy var mapView: MKMapView = {
+        let view = MKMapView()
         return view
     }()
     
@@ -59,21 +55,30 @@ final class FriendListDetailViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .systemBackground
-                
-        configureNavigationBar(largeTitleColor: .label,
-                               backgoundColor: .systemBlue,
-                               tintColor: .label,
-                               title: person.name?.first ?? "",
-                               preferredLargeTitle: false)
         
         setImageAutolayout()
         setAutolayout()
         setContents()
+        
+        personCardView.configure(model: person)
     }
     
     private func setContents() {
+        title = person.name?.first + " " + person.name?.last
         
-        movieOverview.text = person.gender
+        if let strUrl = person.picture?.large,
+           let url = URL(string: strUrl) {
+            imageView.networkImage(url: url)
+        }
+        
+        if let lat = person.location?.coordinates?.latitude.value,
+           let latDegre = CLLocationDegrees(lat),
+           let lng = person.location?.coordinates?.longitude.value,
+           let lngDegre = CLLocationDegrees(lng){
+            let location = CLLocation(latitude: latDegre,
+                                      longitude: lngDegre)
+            mapView.putDropPin(at: location)
+        }
     }
     
     private func setImageAutolayout() {
@@ -82,7 +87,7 @@ final class FriendListDetailViewController: UIViewController {
         imageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        imageView.heightAnchor.constraint(equalToConstant: 400).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
     }
     
     private func setAutolayout() {
@@ -100,17 +105,19 @@ final class FriendListDetailViewController: UIViewController {
         contentView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
         contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
         
-        contentView.addSubview(movieReleaseDate)
-        movieReleaseDate.translatesAutoresizingMaskIntoConstraints = false
-        movieReleaseDate.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        movieReleaseDate.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15).isActive = true
-        movieReleaseDate.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12).isActive = true
-        movieReleaseDate.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        contentView.addSubview(movieOverview)
-        movieOverview.translatesAutoresizingMaskIntoConstraints = false
-        movieOverview.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        movieOverview.topAnchor.constraint(equalTo: movieReleaseDate.bottomAnchor, constant: 25).isActive = true
-        movieOverview.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 15/16).isActive = true
-        movieOverview.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        contentView.addSubview(personCardView)
+        personCardView.translatesAutoresizingMaskIntoConstraints = false
+        personCardView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        personCardView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15).isActive = true
+        personCardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12).isActive = true
+        personCardView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12).isActive = true
+        
+        contentView.addSubview(mapView)
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        mapView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        mapView.topAnchor.constraint(equalTo: personCardView.bottomAnchor, constant: 25).isActive = true
+        mapView.widthAnchor.constraint(equalTo: contentView.widthAnchor).isActive = true
+        mapView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        mapView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
 }

@@ -19,11 +19,12 @@ protocol FriendListViewProtocol: AnyObject {
 final class FriendListViewConroller: UIViewController {
     // MARK: - InteractorProtocol
     var interactor: FriendListInteractorProtocol?
-    weak var router: FriendListRouterProtocol?
+    var router: FriendListRouterProtocol?
     
     // MARK: - Private
     private let dataSource = FriendListDataSource()
     private let mutex = Mutex()
+    private let refreshControl = UIRefreshControl()
 
     // MARK: - Private Lazy
     private lazy var collectionView: UICollectionView = {
@@ -34,14 +35,23 @@ final class FriendListViewConroller: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        interactor?.fetchData(page: 1)
-        
         collectionView.delegate = dataSource
         collectionView.dataSource = dataSource
         collectionView.collectionViewLayout = dataSource
         dataSource.delegate = self
         
         setCollectionViewLayout()
+        
+        configureNavigationBar(largeTitleColor: .white, backgoundColor: .systemBlue, tintColor: .white, title: "Friend List", preferredLargeTitle: true)
+        
+        let signoutButton = UIBarButtonItem(title: "Signout", style: .plain, target: self, action: #selector(signoutButtonAction))
+        navigationItem.rightBarButtonItem = signoutButton
+        
+        collectionView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refreshCollectionView(_:)), for: .valueChanged)
+        
+        showActivityIndicator()
+        interactor?.fetchData()
     }
     
     private func setCollectionViewLayout() {
@@ -52,12 +62,28 @@ final class FriendListViewConroller: UIViewController {
         collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
+    
+    @objc func refreshCollectionView(_ sender: UIRefreshControl) {
+        // Perform data refresh
+        CacheManager.shared.clearCache()
+        dataSource.person.removeAll()
+        collectionView.reloadData()
+        interactor?.resetCurrentPage()
+        interactor?.fetchData()
+        
+        // End refreshing
+        sender.endRefreshing()
+    }
+    
+    @objc private func signoutButtonAction() {
+        view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension FriendListViewConroller: FriendListViewProtocol {
     func updateData(data: [Person]) {
+        hideActivityIndicator()
         DispatchQueue.main.async { [weak self] in
-            
             // If fetch calls so twice or trice while scrolling
             // We must secure critical section
             self?.mutex.sync {
@@ -78,11 +104,13 @@ extension FriendListViewConroller: FriendListViewProtocol {
 }
 
 extension FriendListViewConroller: FriendListDataSourceDelegate {
-    func fetchData(page: Int) {
-        interactor?.fetchData(page: page)
+    func fetchData() {
+        showActivityIndicator()
+        interactor?.fetchData()
     }
     
-    func selectedMovie(with person: Person) {
+    func selectPerson(with person: Person) {
+        hideActivityIndicator()
         router?.showMovieDetailViewController(person: person)
     }
 }

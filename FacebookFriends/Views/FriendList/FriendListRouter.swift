@@ -18,10 +18,6 @@ final class FriendListRouter: FriendListRouterProtocol {
     
     func showMovieDetailViewController(person: Person) {
         let vc = FriendListDetailViewController(person: person)
-        
-        let navVc = UINavigationController(rootViewController: vc)
-        navVc.modalPresentationStyle = .fullScreen
-        
-        entry?.show(navVc, sender: self)
+        entry?.show(vc, sender: self)
     }
 }

@@ -46,7 +46,7 @@ extension UIColor {
     }
     
     static func blue()-> UIColor {
-        return UIColor(named: "blue") ?? .blue
+        return UIColor(named: "facebookDefault") ?? .blue
     }
 }
 

@@ -5,15 +5,18 @@
 //  Created by yilmaz on 13.04.2023.
 //
 
+import Foundation
+
 final class FriendListConfigurator {
     
     static let shared = FriendListConfigurator()
     
     func configure() -> FriendListViewConroller {
         
-        let router = FriendListRouter()
+        let expiryDate = Date().addingTimeInterval(TimeInterval(K.Cache.expiryDate))
         
-        let interactor = FriendListInteractor()
+        let router = FriendListRouter()
+        let interactor = FriendListInteractor(expiryDate: expiryDate)
         let presenter = FriendListPresenter()
         let viewController = FriendListViewConroller()
         viewController.router = router

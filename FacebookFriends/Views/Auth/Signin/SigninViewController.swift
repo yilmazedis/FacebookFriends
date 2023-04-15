@@ -13,7 +13,8 @@ protocol SigninViewProtocol: AnyObject {
     var interactor: SigninInteractorProtocol? { get set }
     var router: SigninRouterProtocol? { get set }
     
-    func updateData(data: [Person])
+    func signin(errorMessage: String)
+    func signin()
 }
 
 final class SigninViewController: UIViewController {
@@ -21,22 +22,22 @@ final class SigninViewController: UIViewController {
     private lazy var topStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.spacing = 12
+        stackView.spacing = 25
         stackView.alignment = .center
         return stackView
     }()
     
     private lazy var appIconImageView: UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(named: "appLogo")
+        view.image = UIImage(named: "facebookLogo")
         return view
     }()
     
     private lazy var appNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "login.Facebook Friends"
+        label.text = "Facebook Friends"
         label.textAlignment = .center
-        label.font = UIFont.appMainBold(fontSize: 24)
+        label.font = UIFont.appMainBold(fontSize: 35)
         label.textColor = UIColor.purple()
         return label
     }()
@@ -49,16 +50,21 @@ final class SigninViewController: UIViewController {
     }()
     
     private lazy var emailTextField: UITextField = {
-        let textField = UITextField()
-        textField.setDefault(iconName: "envelope", placeHolder: "login.email")
-        return textField
+        let view = UITextField()
+        view.setDefault(iconName: "envelope", placeHolder: "Email")
+        view.autocorrectionType = .no
+        view.autocapitalizationType = .none
+        view.text = "yilmaz@edis.com"
+        return view
     }()
     
     private lazy var passwordTextField: UITextField = {
-        let textField = UITextField()
-        textField.setDefault(iconName: "lock", placeHolder: "login.password")
-        textField.isSecureTextEntry = true
-        return textField
+        let view = UITextField()
+        view.setDefault(iconName: "lock", placeHolder: "Password")
+        view.isSecureTextEntry = true
+        view.enablePasswordToggle()
+        view.text = "123456Aa"
+        return view
     }()
     
     private lazy var forgotPasswordContainerView: UIView = {
@@ -68,14 +74,15 @@ final class SigninViewController: UIViewController {
     
     private lazy var forgotPasswordButton: UIButton = {
         let button = UIButton()
-        button.setDefaultClearButton(buttonName: "login.forgotPasswordButton", fontSize: 16)
+        button.setDefaultClearButton(buttonName: "Forgot Password", fontSize: 16)
         button.addTarget(self, action: #selector(forgotPasswordButtonAction), for: .touchUpInside)
         return button
     }()
     
     private lazy var loginButton: UIButton = {
         let button = UIButton()
-        button.setDefaultAppButton(buttonName: "login.loginButton", fontSize: 20)
+        button.setDefaultAppButton(buttonName: "Sign in", fontSize: 20)
+        button.setTitleColor(UIColor.white, for: .normal)
         button.addTarget(self, action: #selector(loginButtonAction), for: .touchUpInside)
         return button
     }()
@@ -91,7 +98,7 @@ final class SigninViewController: UIViewController {
         let label = UILabel()
         label.textColor = UIColor.purple()
         label.font = UIFont.appMainRegular(fontSize: 15)
-        label.text = "doHaveAnAccount"
+        label.text = "No Account? Then"
         label.backgroundColor = .clear
         label.textAlignment = .center
         return label
@@ -99,7 +106,7 @@ final class SigninViewController: UIViewController {
     
     private lazy var signupButton: UIButton = {
         let button = UIButton()
-        button.setDefaultClearButton(buttonName: "signUp", fontSize: 16)
+        button.setDefaultClearButton(buttonName: "Sign Up", fontSize: 16)
         button.addTarget(self, action: #selector(signupButtonAction), for: .touchUpInside)
         return button
     }()
@@ -110,69 +117,68 @@ final class SigninViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.background()
-        self.applyConstraints()
+        view.backgroundColor = UIColor.background()
+        applyConstraints()
     }
     
     private func applyConstraints() {
-        self.navigationItem.setHidesBackButton(true, animated: true)
+        navigationItem.setHidesBackButton(true, animated: true)
         
-        self.view.addSubview(self.topStackView)
-        self.view.addSubview(self.loginStackView)
-        self.view.addSubview(self.bottomStackView)
+        view.addSubview(topStackView)
+        view.addSubview(loginStackView)
+        view.addSubview(bottomStackView)
         
-        self.topStackView.addArrangedSubview(self.appIconImageView)
-        self.topStackView.addArrangedSubview(self.appNameLabel)
+        topStackView.addArrangedSubview(appIconImageView)
+        topStackView.addArrangedSubview(appNameLabel)
         
-        self.forgotPasswordContainerView.addSubview(self.forgotPasswordButton)
-        self.loginStackView.addArrangedSubview(self.emailTextField)
-        self.loginStackView.addArrangedSubview(self.passwordTextField)
-        self.loginStackView.addArrangedSubview(self.forgotPasswordContainerView)
-        self.loginStackView.addArrangedSubview(self.loginButton)
+        forgotPasswordContainerView.addSubview(forgotPasswordButton)
+        loginStackView.addArrangedSubview(emailTextField)
+        loginStackView.addArrangedSubview(passwordTextField)
+        loginStackView.addArrangedSubview(forgotPasswordContainerView)
+        loginStackView.addArrangedSubview(loginButton)
         
-        self.bottomStackView.addArrangedSubview(self.signupLabel)
-        self.bottomStackView.addArrangedSubview(self.signupButton)
+        bottomStackView.addArrangedSubview(signupLabel)
+        bottomStackView.addArrangedSubview(signupButton)
         
-        self.topStackView.translatesAutoresizingMaskIntoConstraints = false
-        self.topStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 35).isActive = true
-        self.topStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
-        self.topStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+        topStackView.translatesAutoresizingMaskIntoConstraints = false
+        topStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 35).isActive = true
+        topStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
+        topStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
         
-        self.appIconImageView.heightAnchor.constraint(equalToConstant: 220).isActive = true
-        self.appIconImageView.widthAnchor.constraint(equalToConstant: 220).isActive = true
+        appIconImageView.heightAnchor.constraint(equalToConstant: 220).isActive = true
+        appIconImageView.widthAnchor.constraint(equalToConstant: 220).isActive = true
         
         
-        self.loginStackView.translatesAutoresizingMaskIntoConstraints = false
-        self.loginStackView.topAnchor.constraint(equalTo: self.topStackView.bottomAnchor, constant: 30).isActive = true
-        self.loginStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
-        self.loginStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+        loginStackView.translatesAutoresizingMaskIntoConstraints = false
+        loginStackView.topAnchor.constraint(equalTo: topStackView.bottomAnchor, constant: 30).isActive = true
+        loginStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
+        loginStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
         
-        self.emailTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        self.passwordTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        emailTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        passwordTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
-        self.forgotPasswordButton.translatesAutoresizingMaskIntoConstraints = false
-        self.forgotPasswordButton.topAnchor.constraint(equalTo: self.forgotPasswordContainerView.topAnchor).isActive = true
-        self.forgotPasswordButton.bottomAnchor.constraint(equalTo: self.forgotPasswordContainerView.bottomAnchor).isActive = true
-        self.forgotPasswordButton.trailingAnchor.constraint(equalTo: self.forgotPasswordContainerView.trailingAnchor, constant: -16).isActive = true
-        self.forgotPasswordButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        forgotPasswordButton.translatesAutoresizingMaskIntoConstraints = false
+        forgotPasswordButton.topAnchor.constraint(equalTo: forgotPasswordContainerView.topAnchor).isActive = true
+        forgotPasswordButton.bottomAnchor.constraint(equalTo: forgotPasswordContainerView.bottomAnchor).isActive = true
+        forgotPasswordButton.trailingAnchor.constraint(equalTo: forgotPasswordContainerView.trailingAnchor, constant: -16).isActive = true
+        forgotPasswordButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
-        self.loginButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        loginButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
-        self.bottomStackView.translatesAutoresizingMaskIntoConstraints = false
-        self.bottomStackView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        self.bottomStackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        bottomStackView.translatesAutoresizingMaskIntoConstraints = false
+        bottomStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        bottomStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
     @objc func forgotPasswordButtonAction(_ sender: UIButton) {
-        let email = self.emailTextField.text ?? ""
-        //self.viewModel.userUpdatePassword(email: email)
+        Toast.show(message: "Not Implemented Yet", on: view)
     }
     
     @objc func loginButtonAction(_ sender: UIButton) {
-        let email = self.emailTextField.text ?? ""
-        let password = self.passwordTextField.text ?? ""
+        let email = emailTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
         
-        router?.routeFriendList()
+        interactor?.validateAndSignin(email: email, password: password)
     }
     
     @objc func signupButtonAction(_ sender: UIButton) {
@@ -180,8 +186,12 @@ final class SigninViewController: UIViewController {
     }
 }
 
-extension SigninViewController: SigninViewProtocol {
-    func updateData(data: [Person]) {
-
+extension SigninViewController: SigninViewProtocol {    
+    func signin(errorMessage: String) {
+        Toast.show(message: errorMessage, on: view)
+    }
+     
+    func signin() {
+        router?.routeFriendList()
     }
 }

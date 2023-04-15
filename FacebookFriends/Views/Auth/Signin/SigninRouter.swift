@@ -27,7 +27,7 @@ final class SigninRouter: SigninRouterProtocol {
     }
     
     func routeFriendList() {
-        let vc = FriendListConfigurator.shared.configure()
+        let vc = UINavigationController(rootViewController: FriendListConfigurator.shared.configure())  
         
         vc.modalPresentationStyle = .fullScreen
 

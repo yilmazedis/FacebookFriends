@@ -6,29 +6,29 @@
 //
 
 
+import RealmSwift
 import Foundation
 
 protocol FriendListInteractorProtocol {
     var presenter: FriendListPresenterProtocol? { get set }
     
-    func fetchData(page: Int)
+    func fetchData()
+    func resetCurrentPage()
 }
 
 final class FriendListInteractor: FriendListInteractorProtocol {
     var presenter: FriendListPresenterProtocol?
+    private let expiryDate: Date
+    private var currentPage = 1
     
-    func fetchData(page: Int) {
-                
-        let queries = [
-            "page": String(page),
-            "results": "30",
-            "seed": "abc"
-        ]
-        
-        let urlStr = K.Person.url
-        let url = urlStr.composeURL(queries: queries)
-        
-        NetworkManager.shared.fetch(with: url) { [weak self] (result: Result<People, Error>) in
+    init(expiryDate: Date) {
+        self.expiryDate = expiryDate
+    }
+    
+    func fetchData() {
+        guard let url = URL(string: K.Person.url + "?results=30&seed=abc&page=" + String(currentPage)) else { return }
+        currentPage += 1
+        NetworkManager.shared.fetch(with: url, expiryDate: expiryDate) { [weak self] (result: Result<People, Error>) in
             
             switch result {
             case .success(let people):
@@ -38,5 +38,9 @@ final class FriendListInteractor: FriendListInteractorProtocol {
                 FastLogger.log(what: "Fetching People Failure", over: error)
             }
         }
+    }
+    
+    func resetCurrentPage() {
+        currentPage = 1
     }
 }
