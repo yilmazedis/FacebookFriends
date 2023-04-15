@@ -48,7 +48,6 @@ final class FriendListViewConroller: UIViewController {
         navigationItem.rightBarButtonItem = signoutButton
         
         collectionView.refreshControl = refreshControl
-        collectionView.alwaysBounceVertical = true
         refreshControl.addTarget(self, action: #selector(refreshCollectionView(_:)), for: .valueChanged)
         
         interactor?.fetchData()
@@ -76,7 +75,7 @@ final class FriendListViewConroller: UIViewController {
     }
     
     @objc private func signoutButtonAction() {
-        dismiss(animated: true, completion: nil)
+        view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
 }
 

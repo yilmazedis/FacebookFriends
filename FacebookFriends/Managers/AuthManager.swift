@@ -26,9 +26,9 @@ class UserAuthManager {
         self.realm = realm
     }
     
-    func signUp(email: String, password: String, username: String, fullName: String) throws {
+    func signup(email: String, password: String, username: String, fullName: String) throws {
         guard realm.object(ofType: UserAuthData.self, forPrimaryKey: email) == nil else {
-            throw UserAuthError.userAlreadyExists
+            throw UserValidationError.userAlreadyExists
         }
         
         let authData = UserAuthData()
@@ -42,16 +42,13 @@ class UserAuthManager {
         }
     }
     
-    func signIn(email: String, password: String) throws {
+    func signin(email: String, password: String) throws {
         guard let authData = realm.object(ofType: UserAuthData.self, forPrimaryKey: email) else {
-            throw UserAuthError.userNotFound
+            throw UserValidationError.userNotFound
         }
         
         guard authData.password == password else {
-            throw UserAuthError.invalidPassword
+            throw UserValidationError.wrongPassword
         }
-        
-        // Successfully authenticated, do something here
     }
-    
 }

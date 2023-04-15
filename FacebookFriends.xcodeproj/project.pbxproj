@@ -50,8 +50,9 @@
 		01702F1429E8AB95000F96B9 /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01702F1329E8AB95000F96B9 /* UILabel+Ext.swift */; };
 		01BD9C2429E8D28F00422591 /* RealmCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD9C2329E8D28F00422591 /* RealmCache.swift */; };
 		01BD9C2629E9A99A00422591 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD9C2529E9A99A00422591 /* AuthManager.swift */; };
-		01BD9C2829E9AA9D00422591 /* UserAuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD9C2729E9AA9D00422591 /* UserAuthError.swift */; };
-		01BD9C2A29E9AD0200422591 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD9C2929E9AD0200422591 /* Status.swift */; };
+		01BD9C2829E9AA9D00422591 /* UserValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD9C2729E9AA9D00422591 /* UserValidationError.swift */; };
+		01BD9C2D29EA02C800422591 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD9C2C29EA02C800422591 /* Toast.swift */; };
+		01BD9C3129EA0DBB00422591 /* UserValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BD9C3029EA0DBB00422591 /* UserValidation.swift */; };
 		5E05BD569B1D0211FF8D8213 /* Pods_FacebookFriendsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AC5129D17881C6D857276B /* Pods_FacebookFriendsTests.framework */; };
 		B6B397BEF839DA752C7DE3FD /* Pods_FacebookFriends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DAD806CD7C7C212306CEE41 /* Pods_FacebookFriends.framework */; };
 /* End PBXBuildFile section */
@@ -113,8 +114,9 @@
 		01702F1329E8AB95000F96B9 /* UILabel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
 		01BD9C2329E8D28F00422591 /* RealmCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCache.swift; sourceTree = "<group>"; };
 		01BD9C2529E9A99A00422591 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
-		01BD9C2729E9AA9D00422591 /* UserAuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthError.swift; sourceTree = "<group>"; };
-		01BD9C2929E9AD0200422591 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		01BD9C2729E9AA9D00422591 /* UserValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserValidationError.swift; sourceTree = "<group>"; };
+		01BD9C2C29EA02C800422591 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		01BD9C3029EA0DBB00422591 /* UserValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserValidation.swift; sourceTree = "<group>"; };
 		45F3C3E88BE095304F002792 /* Pods-FacebookFriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacebookFriends.debug.xcconfig"; path = "Target Support Files/Pods-FacebookFriends/Pods-FacebookFriends.debug.xcconfig"; sourceTree = "<group>"; };
 		50FEBDB130E2B3F3728E0E04 /* Pods-FacebookFriendsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacebookFriendsTests.release.xcconfig"; path = "Target Support Files/Pods-FacebookFriendsTests/Pods-FacebookFriendsTests.release.xcconfig"; sourceTree = "<group>"; };
 		6DAD806CD7C7C212306CEE41 /* Pods_FacebookFriends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FacebookFriends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -258,11 +260,13 @@
 		01702EDB29E70067000F96B9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				01BD9C2B29EA02B400422591 /* CustomViews */,
 				01702EE329E7017C000F96B9 /* Extensions */,
 				01702EE029E70162000F96B9 /* Enums */,
 				01702EDC29E70080000F96B9 /* FastLogger.swift */,
 				01702EDE29E70095000F96B9 /* Constants.swift */,
 				01702F0B29E8489C000F96B9 /* OperatorOverloads.swift */,
+				01BD9C3029EA0DBB00422591 /* UserValidation.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -271,8 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				01702EE129E7016D000F96B9 /* ManagerFail.swift */,
-				01BD9C2729E9AA9D00422591 /* UserAuthError.swift */,
-				01BD9C2929E9AD0200422591 /* Status.swift */,
+				01BD9C2729E9AA9D00422591 /* UserValidationError.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -312,6 +315,14 @@
 				01702EF429E704BA000F96B9 /* FriendListDetailViewController.swift */,
 			);
 			path = SubViews;
+			sourceTree = "<group>";
+		};
+		01BD9C2B29EA02B400422591 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				01BD9C2C29EA02C800422591 /* Toast.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		0D97910B0C5D0622E0C9CD32 /* Pods */ = {
@@ -523,11 +534,11 @@
 				01702EDD29E70080000F96B9 /* FastLogger.swift in Sources */,
 				01702EBC29E6FA64000F96B9 /* SigninPresenter.swift in Sources */,
 				01702ED029E6FB57000F96B9 /* FriendListInteractor.swift in Sources */,
+				01BD9C2D29EA02C800422591 /* Toast.swift in Sources */,
 				01702EF529E704BA000F96B9 /* FriendListDetailViewController.swift in Sources */,
-				01BD9C2829E9AA9D00422591 /* UserAuthError.swift in Sources */,
+				01BD9C2829E9AA9D00422591 /* UserValidationError.swift in Sources */,
 				01702F0E29E849BB000F96B9 /* PersonCardView.swift in Sources */,
 				01702EF029E702BF000F96B9 /* ImageDownloader.swift in Sources */,
-				01BD9C2A29E9AD0200422591 /* Status.swift in Sources */,
 				01702EEE29E70257000F96B9 /* NetworkManager.swift in Sources */,
 				01702F1429E8AB95000F96B9 /* UILabel+Ext.swift in Sources */,
 				01702F1029E84AD5000F96B9 /* MKMapView+Ext.swift in Sources */,
@@ -541,6 +552,7 @@
 				01702EC629E6FB09000F96B9 /* SignupPresenter.swift in Sources */,
 				01702E8829E5EF9B000F96B9 /* SceneDelegate.swift in Sources */,
 				01702F0A29E8459B000F96B9 /* Optional+Ext.swift in Sources */,
+				01BD9C3129EA0DBB00422591 /* UserValidation.swift in Sources */,
 				01702EF929E77F1E000F96B9 /* UIButton+Ext.swift in Sources */,
 				01702F0C29E8489C000F96B9 /* OperatorOverloads.swift in Sources */,
 				01702EF229E702DE000F96B9 /* Mutex.swift in Sources */,

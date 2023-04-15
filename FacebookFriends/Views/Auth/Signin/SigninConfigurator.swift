@@ -13,7 +13,9 @@ final class SigninConfigurator {
         
         let router = SigninRouter()
         
-        let interactor = SigninInteractor()
+        let authManager = UserAuthManager()
+        
+        let interactor = SigninInteractor(authManager: authManager)
         let presenter = SigninPresenter()
         let viewController = SigninViewController()
         viewController.router = router
