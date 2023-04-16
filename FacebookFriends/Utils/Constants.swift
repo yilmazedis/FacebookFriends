@@ -28,7 +28,7 @@ struct K {
     struct InfoMessage {
         static let paginationLength = "Pagination length is equal to fetched data length"
         static let refreshPage = "Refresh page"
-        static let api = "Fetching data is successed"
+        static let api = "Fetching data from url is successed"
         static let noGenre = "There are no Genre"
     }
     

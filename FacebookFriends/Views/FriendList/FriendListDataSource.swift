@@ -83,6 +83,7 @@ extension FriendListDataSource: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
          if indexPath.item == person.count - 20 { //it's your last cell
              delegate?.fetchData()
+             FastLogger.log(what: K.InfoMessage.paginationLength, about: .info)
          }
     }
 }
