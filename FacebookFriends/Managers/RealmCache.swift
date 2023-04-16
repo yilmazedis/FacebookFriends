@@ -21,18 +21,16 @@ class CacheManager {
     
     static let shared = CacheManager()
     
-    private let realmQueue = DispatchQueue(label: "realmQueue")
     private var realm: Realm {
         return try! Realm()
     }
     
     private init() {}
     
-    func getCachedData(for url: String) -> Data? {
+    func getCachedData(for url: String, completion: @escaping (Data?) -> Void) {
         var cachedData: CachedData?
-        var message = ""
         
-        realmQueue.sync {
+        DispatchQueue.main.async {
             cachedData = self.realm.object(ofType: CachedData.self, forPrimaryKey: url)
                     
             if let expiryDate = cachedData?.expiryDate, expiryDate < Date() {
@@ -40,18 +38,18 @@ class CacheManager {
                 try! self.realm.write {
                     self.realm.delete(cachedData!)
                 }
-                message = K.DebugMessage.expiryDate
+                FastLogger.log(what: K.DebugMessage.expiryDate, about: .info)
                 cachedData = nil
+                completion(cachedData?.data)
+            } else {
+                FastLogger.log(what: K.DebugMessage.fromCache, about: .info)
+                completion(cachedData?.data)
             }
         }
-        
-        message = K.DebugMessage.fromCache
-        FastLogger.log(what: message, about: .info)
-        return cachedData?.data
     }
     
     func cacheData(_ data: Data, for url: String, expiryDate: Date?) {
-        realmQueue.async {
+        DispatchQueue.main.async {
             let cachedData = CachedData()
             cachedData.data = data
             cachedData.url = url
@@ -65,7 +63,7 @@ class CacheManager {
     }
     
     func clearCache() {
-        realmQueue.async {
+        DispatchQueue.main.async {
             let cachedData = self.realm.objects(CachedData.self)
             try! self.realm.write {
                 self.realm.delete(cachedData)
